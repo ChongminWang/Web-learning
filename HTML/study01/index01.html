@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+        meta 主要用于设置网页中的一些元数据 
+            charset 指定网页的字符集
+            name 指定的数据的名称
+            content 指定的数据的内容
+                keywords 表示网站的关键字，可以同时指定多个关键字
+                description 指定网站的描述
+
+     -->
+     <!-- 
+        <meta http-equiv="refresh" content="3;url=https://www.mozilla.org">
+        将页面重定向到另一个网站 
+      -->
+      <meta http-equiv="refresh" content="3,url=http://www.baidu.com">
+    <title>实体</title>
+</head>
+<body>
+    <!--
+        网页中编写的多个空格默认情况下会自动被浏览器解析为一个空格
+        HTML中对一些特殊符号不能直接书写，如多个连续的空格、字母两侧的大于和小于符号
+        如果要书写特殊符号，则需要使用HTML中的实体（转义字符）
+        实体的用法：
+            &实体的名字；
+                &nbsp;空格
+                &gt;&lt;大于号、小于号
+                &copy;版权符号
+    -->
+    <p>好好&nbsp;&nbsp;      学习</p>
+    <p>a&gt;b&lt;c</p>
+</body>
+</html>
