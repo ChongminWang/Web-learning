@@ -7,9 +7,73 @@
     <title>Document</title>
 </head>
 <style>
-    
+
+    h1{
+        color: red;
+    }
+    #one{
+        color: blue;
+    }
+    .abc{
+        color: aqua;
+    }
+    /*交集选择器*/
+    div.aaa{
+        color:wheat;
+        font-size: 50px;
+    }
+    /*组合选择器 
+    h2,span{
+        color: green;
+    }*/
+   
+    /*关系选择器*/
+    div > span{
+        color: blue;
+    }
+    div div span{
+        color: red;
+        font-size: 40px;
+    }
+    span + p{
+        color: black;
+        font-size: 80px;
+    }
+    /*属性选择器*/
+    li[title]{
+        color: red;
+    }
+    li[title=abc]{
+        font-size:10px;
+    }
+    li[title^=abc]{
+        background-color: blue;
+    }
+    li[title$=abc]{
+        font-size: 20px;
+    }
+    /*伪类选择器*/
+    #pdd > li:first-child{
+        color: red;
+    }
+    #pdd > li:nth-child(odd){
+        font-size: 10px;
+    }
 </style>
 <body>
+    <h1>我是标题</h1>
+    <p id="one">落霞与孤鹜齐飞</p>
+    <p class="abc">秋水共长天一色</p>
+    <p class="abc">好好学习，天天向上</p>
+    <p>谁知盘中餐，粒粒皆辛苦</p>
+
+    <div class="aaa">天将降大任于斯人也 </div>
+    <p class="aaa">天将降大任于斯人也</p>
+
+    <h2>wwwwwwwww</h2>
+    <!-- 
+        <span>wwwwwwwwwwwwwwww</span>
+     -->
     <!-- 
         常用选择器与复合选择器：
 
@@ -69,6 +133,16 @@
         选择下边所有的兄弟
             语法：兄 ~ 弟
        -->
+       <div>
+        我是div
+            <span>我是div中的span</span>
+            <p>啦啦啦啦啦啦啦啦</p>
+            <div>
+                我是div中的div
+                <p>我是div中的div中的p</p>
+                <span>我是div中的div中的span</span>
+            </div>
+       </div>
        <!-- 
         属性选择器：
             [属性名] 选择含有指定属性的元素
@@ -78,6 +152,13 @@
             [属性名*=属性值] 选择属性值中含有某值的元素的元素
 
         -->
+        <ul>
+            <li title="abc">one</li>
+            <li title="abcdefg">two</li>
+            <li title="hhhabc">three</li>
+            <li>four</li>
+            <li>five</li>
+        </ul>
     <!-- 
     伪类选择器：
         伪类（不存在的类，特殊的类）
@@ -100,6 +181,15 @@
             ：not() 否定伪类
                 将符合条件的元素从选择器中去除
     -->
+    <ul id="pdd">
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+        <li>4444</li>
+        <li>5555</li>
+        <li>6666</li>
+        <li>7777</li>
+    </ul>
     <!-- 
         a元素的伪类：
             ：link 用来表示没访问过的链接（正常的链接）
