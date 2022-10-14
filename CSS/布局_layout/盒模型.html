@@ -1,0 +1,72 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-10-14 16:00:20
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-10-14 16:31:02
+ * @FilePath: \Web-learning\CSS\布局_layout\盒模型.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box1{
+        /*
+            内容区（content），元素中的所有子元素和文本内容都在内容去中排列
+            内容去的大小由width和height属性设置
+        */
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+
+            /*
+                边框（border），属于盒子边缘，边框的大小会影响整个盒子的大小
+                设置边框要设置三个样式
+                    边框的宽度 border-width
+                    边框的颜色 border-color
+                    边框的样式 border-style
+            */
+            border-width: 8px;
+            border-color: red;
+            border-style: solid;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            /*
+            border-width: 1px;
+                默认值，一般都是3个像素
+                border-width可以指定四个方向的边框的宽度
+                四个值： 上 右 下 左
+                三个值： 上 左右 下
+                二个值： 上下 左右
+                一个值： 上下左右
+            border-xxx-width：指定单独某一边的宽度
+            border-xxx-color：指定单独某一边的颜色，默认值为color的颜色
+            border-xxx-style：指定单独某一边的样式，默认值为none
+            */
+            border: red solid 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        盒模型、盒子模型、框模型（box model）
+            CSS将页面中的所有元素都设置成一个矩形的盒子
+            每个盒子都由以下部分组成
+                内容区（content）
+                内边距（padding）
+                外框（border）
+                外边距（margin）
+     -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
