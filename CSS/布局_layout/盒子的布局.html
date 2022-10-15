@@ -1,0 +1,147 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-10-15 14:50:16
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-10-15 16:40:17
+ * @FilePath: \Web-learning\CSS\布局_layout\盒子的布局.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+    /*  重置样式表：专门用来对浏览器的样式进行重置的
+            reset.css 直接去除了浏览器的默认样式
+            normalize.css 对默认样式进行了统一
+
+     */
+        .outer{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+
+        .inner{
+            /* width: auto;  width的值默认就是auto*/
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin-right: auto;
+            margin-left: auto;
+            /*
+                元素的水平方向的布局：
+                    元素在其父元素中水平方向的位置由以下几个属性共同决定“
+                        margin-left
+                        border-left
+                        padding-left
+                        width
+                        padding-right
+                        border-right
+                        margin-right
+
+                    一个元素在其父元素中，水平布局必须要满足以下的等式
+margin-left+border-left+padding-left+width+padding-right+border-right+margin-right = 其父元素内容区的宽度 （必须满足）
+
+                0 + 0 + 0 + 200 + 0 + 0 + 0 = 800
+                0 + 0 + 0 + 200 + 0 + 0 + 600 = 800
+
+                    - 以上等式必须满足，如果相加结果使等式不成立，则称为过度约束，则等式会自动调整
+                        - 调整的情况：
+                            - 如果这七个值中没有为 auto 的情况，则浏览器会自动调整margin-right值以使等式满足
+                    - 这七个值中有三个值和设置为auto
+                        width
+                        margin-left
+                        maring-right
+                        - 如果某个值为auto，则会自动调整为auto的那个值以使等式成立
+                           
+                            auto + 0 + 0 + 200 + 0 + 0 + 200 = 800  auto = 400
+
+
+                        - 如果将一个宽度和一个外边距设置为auto，则宽度会调整到最大，设置为auto的外边距会自动为0
+                        - 如果将三个值都设置为auto，则外边距都是0，宽度最大
+                        - 如果将两个外边距设置为auto，宽度固定值，则会将外边距设置为相同的值
+                            所以我们经常利用这个特点来使一个元素在其父元素中水平居中
+                            示例：
+                                width:xxxpx;
+                                margin:0 auto;
+
+             */
+
+             /* 
+                子元素是在父元素的内容区中排列的，
+                    如果子元素的大小超过了父元素，则子元素会从父元素中溢出
+                    使用 overflow 属性来设置父元素如何处理溢出的子元素
+
+                    可选值：
+                        visible，默认值 子元素会从父元素中溢出，在父元素外部的位置显示
+                        hidden 溢出内容将会被裁剪不会显示
+                        scroll 生成两个滚动条，通过滚动条来查看完整的内容
+                        auto 根据需要生成滚动条
+
+                overflow-x: 
+                overflow-y:
+             */
+
+             /* 
+            垂直外边距的重叠（折叠）
+                - 相邻的垂直方向外边距会发生重叠现象
+                - 兄弟元素
+                    - 兄弟元素间的相邻垂直外边距会取两者之间的较大值（两者都是正值）
+                    - 特殊情况：
+                        如果相邻的外边距一正一负，则取两者的和
+                        如果相邻的外边距都是负值，则取两者中绝对值较大的
+
+                    - 兄弟元素之间的外边距的重叠，对于开发是有利的，所以我们不需要进行处理
+
+                - 父子元素
+                    - 父子元素间相邻外边距，子元素的会传递给父元素（上外边距）
+                    - 父子外边距的折叠会影响到页面的布局，必须要进行处理      
+         */
+
+          /* 
+                行内元素的盒模型
+                    - 行内元素不支持设置宽度和高度
+                    - 行内元素可以设置padding，但是垂直方向padding不会影响页面的布局
+                    - 行内元素可以设置border，垂直方向的border不会影响页面的布局
+                    - 行内元素可以设置margin，垂直方向的margin不会影响布局
+             */
+        
+         /* 
+                display 用来设置元素显示的类型
+                    可选值：
+                        inline 将元素设置为行内元素
+                        block 将元素设置为块元素
+                        inline-block 将元素设置为行内块元素 
+                                行内块，既可以设置宽度和高度又不会独占一行
+                        table 将元素设置为一个表格
+                        none 元素不在页面中显示
+
+                visibility 用来设置元素的显示状态
+                    可选值：
+                        visible 默认值，元素在页面中正常显示
+                        hidden 元素在页面中隐藏 不显示，但是依然占据页面的位置
+        */
+         /* 
+            默认样式：
+                - 通常情况，浏览器都会为元素设置一些默认样式
+                - 默认样式的存在会影响到页面的布局，
+                    通常情况下编写网页时必须要去除浏览器的默认样式（PC端的页面）
+         */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+
+        <div class="inner"></div>
+
+    </div>
+</body>
+</html>
