@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-10-15 16:48:41
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-10-16 17:22:02
+ * @LastEditTime: 2022-10-17 16:02:29
  * @FilePath: \Web-learning\CSS\practice\网易右侧导航栏.html
  * @Description: 
  * 
@@ -14,8 +14,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .box{
+            width: 299px;
+            height: 350px;
+            margin: 50px auto;
+            border: 1px gray solid;
+        }
+        a{
+            text-decoration: none;
+        }
+        .new-title{
+            padding-top: 10px;
+            margin-left: 10px;
+            margin-top: -7px;
+        }
+        .new-title a
+        {
+            color: black;
+            font-weight: 800;
+            border-top: 1px red solid;
+        }
+        .new-title a:hover{
+            color: red;
+        }
+        .one{
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        h3{
+            color: aliceblue;
+            margin-top: -30px;
+            padding-left: 10px;
+        }
+        img{
+            height: 200px;
+
+            transition: all 0.3s ease-in 0s;
+        }
+        img:hover{
+            transform: scale(1.2);
+            transition: all 0.3s ease-in ;
+
+        }
+        .ul-list{
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .ul-list li::before{
+            content: '■';
+            color: bisque;
+            font-size: 12px;
+            margin-right: 4px;
+        }
+        .line{
+            margin-left: 5px;
+            margin-top: 10px;
+        }
+        .line a{
+            color: black;
+        }
+        .line a:hover{
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="box">
+        <h1 class="new-title"><a href="#">军事 · 航空</a></h1>
+        <div class="one">
+            <a>
+                <img src="./img/02/1.jpg" alt="解放军车队">
+                <h3>实拍解放军猛士车队集群出动</h3>
+            </a>
+        </div>
+        <ul class="ul-list">
+            <li class="line">
+                <a href="#">实拍美国巨型双体机挂高超音速飞行器</a></li>
+            <li  class="line"><a href="#">实拍国产早期型号卡车炮猛烈开火</a></li>
+            <li  class="line"><a href="#">被夹在俩胖子中间，女子向航空公司索赔</a></li>
+            <li  class="line"><a href="#">物流保通保畅：民航保障货运航班环比增长</a></li>
+        </ul>
+    </div>
 </body>
 </html>
