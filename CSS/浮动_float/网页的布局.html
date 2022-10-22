@@ -1,0 +1,66 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-10-22 21:00:14
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-10-22 21:11:29
+ * @FilePath: \Web-learning\CSS\浮动_float\网页的布局.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header,main,footer{
+            width: 600px;
+            margin: 0 auto;
+        }
+        header{            
+            height: 150px;
+            background-color: aqua;
+        }
+        main{
+            height: 400px;
+            background-color: pink;
+            margin: 10px auto;
+        }
+        .box1,.box2,.box3{
+            height: 100%;
+            float: left;
+        }
+        .box1{
+            width: 100px;
+            background-color: black;
+        }
+        .box2{
+            width: 380px;
+            background-color: #bfa;
+            margin: 0 10px;
+        }
+        .box3{
+            width: 100px;
+            background-color: blue;
+        }
+        footer{
+            height: 150px;
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header></header>
+    <!-- 中间 -->
+    <main>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </main>
+    <!-- 尾部 -->
+    <footer></footer>
+</body>
+</html>
