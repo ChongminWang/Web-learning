@@ -1,0 +1,59 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-10-24 21:17:07
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-10-24 21:43:32
+ * @FilePath: \Web-learning\CSS\practice\W3导航条.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .nav{
+            width: 1000px;
+            height: 50px;
+            background-color:#E8E7E3;
+            margin: 100px auto;
+        }
+        li{
+            float: left;
+            height: 50px;
+            line-height: 50px;
+
+            list-style-type: none;
+        }
+        li a{
+            display: block;
+            font-size: 19px;
+            color: #777788;
+            text-decoration: none;
+            padding: 0 21px;
+        }
+        li:last-child a{
+            padding: 0 29px 0 23px ;
+        }
+        a:hover{
+            color: aliceblue;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="#">HTML/CSS</a></li>
+        <li><a href="#">Browser Side</a></li>
+        <li><a href="#">Server Side</a></li>
+        <li><a href="#">Programming</a></li>
+        <li><a href="#">XML</a></li>
+        <li><a href="#">Web Building</a></li>
+        <li><a href="#">Reference</a></li>
+    </ul>
+</body>
+</html>
