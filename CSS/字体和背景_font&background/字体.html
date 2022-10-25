@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-10-23 20:30:32
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-10-23 21:01:43
+ * @LastEditTime: 2022-10-25 16:58:28
  * @FilePath: \Web-learning\CSS\字体和背景_font&background\字体.html
  * @Description: 
  * 
@@ -14,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./fa/css/all.css">
     <style>
         /* 
         font-face可以将服务器中的字体直接提供给用户去使用 
@@ -73,5 +74,33 @@
                     class="fab fa-accessible-icon"
 
      -->
+
+     <i class="fas fa-meteor"></i>
+     <i class="fas fa-cat"  style="color: red; font-size:100px; margin-left: 100px;"></i>
+
+     <!-- 
+                li::before{           
+                通过伪元素来设置图标字体
+                    1.找到要设置图标的元素通过before或after选中
+                    2.在content中设置字体的编码
+                    3.设置字体的样式
+                        fab
+                        font-family: 'Font Awesome 5 Brands';
+
+                        fas
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 900; 
+
+            content: '\f1b0';
+            /* font-family: 'Font Awesome 5 Brands'; */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900; 
+            color: blue;
+            margin-right: 10px;
+        }
+
+        通过实体来使用图标字体：
+            &#x图标的编码;
+      -->
 </body>
 </html>
