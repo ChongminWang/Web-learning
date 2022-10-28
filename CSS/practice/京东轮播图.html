@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-10-24 21:45:52
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-10-24 21:45:56
+ * @LastEditTime: 2022-10-28 19:00:06
  * @FilePath: \Web-learning\CSS\practice\京东轮播图.html
  * @Description: 
  * 
@@ -14,8 +14,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        /* 设置图片容器 */
+        .img-list{
+            width: 590px;
+            height: 470px;
+            margin: 200px auto;
+            /* 设置相对定位，使得dote相对于img-list定位，而不是相对于根元素定位 */
+            position: relative;
+
+        }
+        .img-list li{
+            position: absolute;
+        }
+        /* 通过修改元素的层级来显示指定的图片 */
+        .img-list li:nth-child(3){
+            z-index: 5;
+        }
+        
+        /* 设置点的样式 */
+        .dote{
+            position: absolute;
+            z-index: 999;
+            bottom: 20px;
+            left: 40px;
+        }
+
+        .dote a{
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin-left: 4px;
+            border-radius: 50%;
+            /* 将背景颜色设置到内容区，边框和内边距不会有背景颜色 */
+            background-clip: content-box;
+            border: 2px solid transparent;
+            background-color: rgba(255, 255,255, 0.6);
+
+        }
+        .dote a:hover{
+            background-color: #fff;
+            border: 2px solid rgba(255, 255,255, 0.6);
+        }
+    </style>
 </head>
 <body>
-    
+    <ul class="img-list">
+        <li><a href="javascript:;"><img src="./img/03/1.jpg" ></a></li>
+        <li><a href="javascript:;"><img src="./img/03/2.jpg" ></a></li>
+        <li><a href="javascript:;"><img src="./img/03/3.jpg" ></a></li>
+        <li><a href="javascript:;"><img src="./img/03/4.jpg" ></a></li>
+        <li><a href="javascript:;"><img src="./img/03/5.jpg" ></a></li>
+        <li><a href="javascript:;"><img src="./img/03/6.jpg" ></a></li>
+        <li><a href="javascript:;"><img src="./img/03/7.jpg" ></a></li>
+        <li><a href="javascript:;"><img src="./img/03/8.jpg" ></a></li>
+
+        <div class="dote">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
 </body>
 </html>
