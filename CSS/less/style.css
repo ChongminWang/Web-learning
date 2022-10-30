@@ -1,0 +1,34 @@
+/*
+    css中的注释，内容会被解析到css文件中
+*/
+.box5 {
+  width: 200px;
+  color: #bfa;
+}
+.box5:hover {
+  color: orange;
+}
+div .box5 {
+  width: 100px;
+}
+.box6 {
+  width: 200px;
+  background-image: url("box6/1.png");
+}
+.p1 {
+  width: 200px;
+  height: 500px;
+}
+.p3 {
+  width: 200px;
+  height: 500px;
+}
+.p5 {
+  width: 100px;
+  height: 100px;
+}
+div {
+  width: 300px;
+  height: 200px;
+  border: 1px solid red;
+}

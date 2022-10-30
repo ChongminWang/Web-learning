@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-10-29 20:44:30
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-10-29 20:44:34
+ * @LastEditTime: 2022-10-29 21:38:18
  * @FilePath: \Web-learning\CSS\practice\奔跑的骚年.html
  * @Description: 
  * 
@@ -14,8 +14,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .box1{
+            width: 256px;
+            height: 256px;
+            margin: 100px auto;
+            background-image: url(./img/02/bg2.png);
+            animation: run 0.2s steps(6) infinite;
+        }
+        @keyframes run {
+            from{
+                background-position: 0;
+            }
+            to{
+                background-position: 1536px;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="box1"></div>
 </body>
 </html>
