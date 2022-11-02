@@ -1,0 +1,50 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-11-02 21:30:43
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-11-02 21:56:03
+ * @FilePath: \Web-learning\JavaScript\study01\helloworld.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=""></script>
+    <script>
+        //控制浏览器弹出一个警告框
+        // alert("好好学习，天天向上");
+
+        // 让计算机在页面输出一个内容
+        /*
+         * document.write()向body中输出一个内容
+         *document.write("一定要好好学习！");
+        */
+        
+        /*
+        向控制台输出一个内容
+        console.log("")
+        console.log("好好学习了吗？")
+        */
+        
+        /*
+        通过script标签引入外部js文件，可以在不同的页面中同时使用，也可以利用到浏览器的缓存机制
+        script标签一旦引入外部文件，就不能再编写代码了
+        */
+       
+    </script>
+</head>
+<body>
+    <!-- 
+        可以将JS代码编写到标签的onclick 、 href属性中
+        虽然可以写在标签的属性中，但是他们的结构和行为耦合，不方便维护，故不推荐使用
+     -->
+     <button onclick="alert('确定放弃吗？')">点击</button>
+
+     <a href="javascript:alert('不再学习一会儿？');">玩</a>
+</body>
+</html>
