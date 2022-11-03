@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-11-03 15:21:58
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-11-03 15:23:08
+ * @LastEditTime: 2022-11-03 19:17:44
  * @FilePath: \Web-learning\JavaScript\study01\运算符2.html
  * @Description: 
  * 
@@ -60,7 +60,8 @@
 			 * 	如果该值是NaN则返回true，否则返回false
 			 */
 
-
+			var b = NaN;
+			console.log(isNaN(b));
              /*
 			 * 条件运算符也叫三元运算符
 			 * 	语法：
@@ -72,8 +73,11 @@
 			 * 		如果条件的表达式的求值结果是一个非布尔值，
 			 * 			会将其转换为布尔值然后在运算
 			 */
-
-
+			var a = 12;
+			var b = 55;
+			var c = 16;
+			var max = a > b ? (a > c ? a : c) : (b > c ? b : c);
+			console.log(max)
 
             /*
              *
