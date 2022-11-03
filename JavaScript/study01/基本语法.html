@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-11-02 21:56:54
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-11-02 22:00:37
+ * @LastEditTime: 2022-11-03 11:27:12
  * @FilePath: \Web-learning\JavaScript\study01\基本语法.html
  * @Description: 
  * 
@@ -20,6 +20,64 @@
             js每一条语句以分号结尾（不加会出现一些问题）
             js会自动忽略多个空格和换行
         */
+
+
+        /*
+            字面量：一些不可改变的值
+            变量：用来保存字面量，变量的值可以任意改变，通过变量对字面量进行描述
+
+            声明变量： var 关键字（变量名）
+        */
+
+        /*
+            标识符
+                在JS中所有的可以由我们自主命名的都可以称为标识符
+                例如：变量名、属性名、函数名
+                    规则：
+                        标识符中可以含有字母、数字、_、$
+                        不能以数字开头
+                        不能是ES中的关键字或保留字
+                        一般采用驼峰命名法：首字母小写，每个单词的开头字母大写，其余字母小写
+
+            JS底层保存标识符时，实际上是采用的Unicode编码，理论上讲，所有的utf-8中的内容都可以作为标识符
+        */
+
+        /*
+            JS中的六种数据类型
+                String 字符串
+                Number 数值
+                Boolean 布尔值
+                Null 空值
+                Undefined 未定义
+                Object 对象
+
+            String Number Boolean Null Undefined 属于基本数据类型
+            Object属于引用数据类型
+
+
+            String 用引号引起来，单双引号都可，但不可混用  引号不能嵌套
+            在字符串中可以使用 \ 作为转义字符
+            \n 表示换行  \t表示制表符 \\表示\
+            var str = "hello"
+
+            JS中所有的数值都是Number类型，包括整数和小数（浮点数）
+                JS中表示的最大值 Number.MAX_VALUE  超过最大值，则会返回Infinity（Number类型）表示正无穷
+            NaN（Number类型 typeof NaN返回number）是一个特殊的数字，表示Not a Number
+            使用JS进行浮点数运算，可能得到一个不精确的结果（不要用JS计算对精确度要求较高的运算，用服务器进行运算）
+            
+            使用 运算符typeof来检查一个变量的类型
+                typeof 变量
+            
+            Boolean，只有两个值
+                true 表示真
+                false 表示假
+
+            Null类型的值只有一个null，专门用来表示一个为空的对象
+            typeof null值返回object
+            
+            Undefined类型的值也只有一个，undefined，当声明一个变量，却不赋值时，它的值就是undefined
+        */
+       
     </script>
 </head>
 <body>
