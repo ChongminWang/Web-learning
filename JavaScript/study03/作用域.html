@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-11-06 18:18:57
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-11-06 18:19:02
+ * @LastEditTime: 2022-11-07 17:47:03
  * @FilePath: \Web-learning\JavaScript\study03\作用域.html
  * @Description: 
  * 
@@ -34,12 +34,13 @@
 			 * 		2.函数作用域
 			 * 
 			 */
-			
-
+			var a = 10;
+			// console.log(window);
+			// window.alert(window.a);
             /*
 			 * 变量的声明提前
 			 * 	- 使用var关键字声明的变量，会在所有的代码执行之前被声明（但是不会赋值），
-			 * 		但是如果声明变量时不适用var关键字，则变量不会被声明提前
+			 * 		但是如果声明变量时不使用var关键字，则变量不会被声明提前
 			 * 
 			 * 函数的声明提前
 			 * 	- 使用函数声明形式创建的函数 function 函数(){}
@@ -47,7 +48,7 @@
 			 * 	   使用函数表达式创建的函数，不会被声明提前，所以不能在声明前调用	
 			 */
 
-
+			
 
             /*
 			 * 函数作用域	
@@ -72,6 +73,14 @@
             /*
 			 * 定义形参就相当于在函数作用域中声明了变量
 			 */
+			var b = 10;
+			function fun(){
+				console.log(b);
+				b = 11;
+			}
+			fun();
+			//在全局输出b
+			console.log(b);
 </script>
 <body>
     
