@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-10-29 21:43:01
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-10-29 22:07:27
+ * @LastEditTime: 2022-11-08 22:14:33
  * @FilePath: \Web-learning\CSS\practice\小人儿乱跑.html
  * @Description: 
  * 
@@ -18,9 +18,28 @@
         .box1{
             background-image: url(./img/02/trump_run.png);
             width: 100px;
-            height: 100px;
+            height: 400px;
             margin: 100px auto;
-            animation: run1 1s steps(6),run2 1s steps(6),run3 1s steps(6),run4 1s steps(6);
+            animation: runn steps(6) 0.5s infinite;
+        }
+
+        @keyframes runn{
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: 600px 0;
+            }
+        }
+
+
+        .box2{
+            background-image: url(./img/02/trump_run.png);
+            width: 100px;
+            height: 100px;
+            margin: 200px auto;
+            background-repeat: no-repeat;
+            animation: run1 2s steps(6),run2 2s 2s steps(6),run3 2s  4s steps(6),run4 2s 6s steps(6);
             animation-iteration-count: infinite, infinite, infinite, infinite;
         }
 
@@ -37,31 +56,32 @@
         }
         @keyframes run2 {
             0%{
-                background-position: 100px 0;
+                background-position: -100px 0;
             }
             100%{
-                background-position:600px 100px ;
+                background-position:600px -100px ;
             }
         }
         @keyframes run3 {
             0%{
-                background-position: 200px 0;
+                background-position: -200px 0;
             }
             100%{
-                background-position:600px 200px ;
+                background-position:600px -200px ;
             }
         }
         @keyframes run4 {
             0%{
-                background-position: 300px 0;
+                background-position: -300px 0;
             }
             100%{
-                background-position:600px 300px ;
+                background-position:600px -300px ;
             }
         }
     </style>
 </head>
 <body>
     <div class="box1"></div>
+    <div class="box2"></div>
 </body>
 </html>

@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-11-06 18:18:57
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-11-07 17:47:03
+ * @LastEditTime: 2022-11-09 17:17:54
  * @FilePath: \Web-learning\JavaScript\study03\作用域.html
  * @Description: 
  * 
@@ -73,14 +73,58 @@
             /*
 			 * 定义形参就相当于在函数作用域中声明了变量
 			 */
-			var b = 10;
-			function fun(){
-				console.log(b);
-				b = 11;
-			}
-			fun();
+			// var b = 10;
+			// function fun(){
+			// 	// console.log(b);
+			// 	b = 11;
+			// }
+			// fun();
 			//在全局输出b
-			console.log(b);
+			// console.log(b);
+			
+			var  a = 123;
+			function fun(){
+				alert(a);
+				//a在当前函数内会被提前声明，但不会被赋值
+				var a = 456;
+			}
+			
+			fun();
+			alert(a);
+
+			var b = 123;
+			function fun2(){
+				alert(b);
+				//b没有用var赋值，不会提前声明，此时局部里没有b的值，只能向全局中去查找b的值
+				b = 456;
+				//在函数中，不适用var声明的变量都会成为全局变量
+			}
+			fun2();
+			alert(b);
+
+
+			var c = 123;
+			function fun3(c){
+				alert(c);
+				//函数内有c，此次只给函数内的c赋值，对全局没有影响
+				c = 456;
+			}
+			//没有传递实参，执行函数后，alert打印undefined
+			fun3();
+			//此处还是打印的全局的c
+			alert(c);
+
+
+			var d = 123;
+			function fun4(d){
+				alert(d);
+				//此处d修改的只是传入的123，对全局的123没有影响
+				d = 456;
+			}
+			//传入了实参，所以执行函数后，alert打印123
+			fun4(123);
+			//此处打印的为全局的d 123
+			alert(d);
 </script>
 <body>
     

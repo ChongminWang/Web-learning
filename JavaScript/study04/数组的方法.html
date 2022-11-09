@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-11-08 21:48:38
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-11-08 21:49:50
+ * @LastEditTime: 2022-11-09 19:49:41
  * @FilePath: \Web-learning\JavaScript\study04\数组的方法.html
  * @Description: 
  * 
@@ -22,18 +22,24 @@
 			 * 		这样这些元素将会自动添加到数组的末尾
 			 * 	- 该方法会将数组新的长度作为返回值返回
 			 */
-
+			var arr  = [1,3,5,7,9];
+			arr.push(5);
+			console.log(arr);
              /*
 			 * pop()
 			 * 	- 该方法可以删除数组的最后一个元素,并将被删除的元素作为返回值返回
 			 */
-
+			var result = arr.pop();
+			console.log(result)
+			console.log(arr);
              /*
 			 * unshift()
 			 * 	- 向数组开头添加一个或多个元素，并返回新的数组长度
 			 * 	- 向前边插入元素以后，其他的元素索引会依次调整
 			 */
-
+			result = arr.unshift(11,22)
+			console.log(result)
+			console.log(arr);
              /*
 			 * shift()
 			 * 	- 可以删除数组的第一个元素，并将被删除的元素作为返回值返回
@@ -47,7 +53,11 @@
 			 * arr
 			 * 	形参，要提取信息的数组
 			 */
+			function getAdult(arr){
+				var newArr = [];
 
+				return newArr;
+			}
 
 
              /*

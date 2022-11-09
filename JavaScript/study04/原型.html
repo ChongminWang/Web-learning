@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-11-08 21:45:35
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-11-08 21:46:40
+ * @LastEditTime: 2022-11-09 19:19:30
  * @FilePath: \Web-learning\JavaScript\study04\原型.html
  * @Description: 
  * 
@@ -37,15 +37,15 @@
 			function MyClass(){
 				
 			}
-
-
+			MyClass.prototype.name = "MyClass";
+			var mc = new MyClass();
             //使用in检查对象中是否含有某个属性时，如果对象中没有但是原型中有，也会返回true
-			//console.log("name" in mc);
+			console.log("name" in mc);
 			
 			//可以使用对象的hasOwnProperty()来检查对象自身中是否含有该属性
 			//使用该方法只有当对象自身中含有属性时，才会返回true
 			//console.log(mc.hasOwnProperty("age"));
-			
+			 
 			//console.log(mc.hasOwnProperty("hasOwnProperty"));
 			
 			/*
@@ -59,8 +59,7 @@
 			
 
 
-
-             //当我们直接在页面中打印一个对象时，事件上是输出的对象的toString()方法的返回值
+             //当我们直接在页面中打印一个对象时，实际上是输出的对象的toString()方法的返回值
 			//如果我们希望在输出对象时不输出[object Object]，可以为对象添加一个toString()方法
 			//Person[name=孙悟空,age=18,gender=男]
 			/*per.toString = function(){
