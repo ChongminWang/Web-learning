@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-11-09 20:25:40
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-11-09 20:26:48
+ * @LastEditTime: 2022-11-10 15:23:49
  * @FilePath: \Web-learning\JavaScript\study04\函数的方法.html
  * @Description: 
  * 
@@ -57,11 +57,12 @@
 			//创建一个Date对象
 			//如果直接使用构造函数创建一个Date对象，则会封装为当前代码执行的时间
 			var d = new Date();
+			console.log(d);
 			
 			//创建一个指定的时间对象
 			//需要在构造函数中传递一个表示时间的字符串作为参数
 			//日期的格式  月份/日/年 时:分:秒
-			var d2 = new Date("2/18/2011 11:10:30");
+			var d2 = new Date("11/10/2022 15:20:30");
 			
 			/*
 			 * getDate()
@@ -155,9 +156,9 @@
 			 * Math.round()
 			 * 	- 可以对一个数进行四舍五入取整
 			 */
-			//console.log(Math.ceil(1.1));
-			//console.log(Math.floor(1.99));
-			//console.log(Math.round(1.4));
+			console.log(Math.ceil(1.1));
+			console.log(Math.floor(1.99));
+			console.log(Math.round(1.555));
 			
 			/*
 			 * Math.random()

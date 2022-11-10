@@ -1,0 +1,78 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-11-10 16:25:41
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-11-10 16:37:21
+ * @FilePath: \Web-learning\JavaScript\study05\邮件的正则.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+			 * 检查一个字符串中是否含有 .
+			 * . 表示任意字符
+			 * 在正则表达式中使用\作为转义字符
+			 * \. 来表示.
+			 * \\  表示\
+			 * 
+			 * 注意：使用构造函数时，由于它的参数是一个字符串，而\是字符串中转义字符，
+			 * 	如果要使用\则需要使用\\来代替
+			 */
+			var reg = /\./
+			
+             /*
+			 * \w
+			 * 	- 任意字母、数字、_  [A-z0-9_]
+			 * \W
+			 * 	- 除了字母、数字、_  [^A-z0-9_]
+			 * \d
+			 * 	- 任意的数字 [0-9]
+			 * \D
+			 * 	- 除了数字 [^0-9]
+			 * \s
+			 * 	- 空格
+			 * \S
+			 * 	- 除了空格
+			 * \b
+			 * 	- 单词边界
+			 * \B
+			 * 	- 除了单词边界
+			 */
+
+
+             /*
+			 * 创建一个正则表达式检查一个字符串中是否含有单词child
+			 */     
+            
+            
+            
+            
+            //去除开头的空格
+			//str = str.replace(/^\s*/, "");
+			//去除结尾的空格
+			//str = str.replace(/\s*$/, "");
+			// /^\s*|\s*$/g 匹配开头和结尾的空格
+			str = str.replace(/^\s*|\s*$/g,"");
+
+
+            /*
+			 * 电子邮件
+			 * 	hello  .nihao          @     abc  .com.cn
+			 * 
+			 * 任意字母数字下划线    .任意字母数字下划线  @   任意字母数字     .任意字母（2-5位）   .任意字母（2-5位）
+			 * 
+			 * \w{3,}  (\.\w+)*  @  [A-z0-9]+  (\.[A-z]{2,5}){1,2}
+			 */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-11-09 20:28:45
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-11-09 20:32:28
+ * @LastEditTime: 2022-11-10 16:09:08
  * @FilePath: \Web-learning\JavaScript\study04\正则表达式.html
  * @Description: 
  * 
@@ -42,6 +42,8 @@
 			 * 			g 全局匹配模式
 			 */
 
+			// var reg = new RegExp("")
+
 
              /*
 			 * 正则表达式的方法：
@@ -59,7 +61,10 @@
 			 * 
 			 */
 
-
+			
+			 var str = "abc@126.com"; var preg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
+			//匹配Email if(preg.test(str)){     var msg = "匹配成功"; }else{     var msg = "匹配失败！"; } alert(msg); 
+			
 
              //创建一个正则表达式，检查一个字符串中是否有a或b
 			/*
