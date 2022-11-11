@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-11-11 10:46:17
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-11-11 10:46:39
+ * @LastEditTime: 2022-11-11 20:40:44
  * @FilePath: \Web-learning\JavaScript\study05\练习_图片的切换.html
  * @Description: 
  * 
@@ -14,6 +14,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#outer{
+				width: 500px;
+				margin: 50px auto;
+				padding: 10px;
+				background-color: greenyellow;
+				/*设置文本居中*/
+				text-align: center;
+			}
+    </style>
+
+    <script>
+
+        window.onload  = function(){
+
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+
+            var arrList = ["img/1.jpg" , "img/2.jpg" , "img/3.jpg" , "img/4.jpg" , "img/5.jpg"];
+
+            var img = document.getElementsByTagName("img")[0];
+            var info = document.getElementById("info");
+            var index = 0;
+            info.innerHTML  =  "一共 "+arrList.length+" 张图片，当前第 "+(index+1)+" 张";
+
+            next.onclick=function(){
+                index ++;
+                if(index >  arrList.length-1){
+                    index = 0;
+                }
+                img.src = arrList[index];
+                info.innerHTML  =  "一共 "+arrList.length+" 张图片，当前第 "+(index+1)+" 张";
+            }
+            prev.onclick=function(){
+                index --;
+                if(index <0){
+                    index = arrList.length-1;
+                }
+                img.src = arrList[index];
+                info.innerHTML  =  "一共 "+arrList.length+" 张图片，当前第 "+(index+1)+" 张";
+            }
+
+        }
+    </script>
 </head>
 <body>
     <div id="outer">
