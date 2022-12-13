@@ -1,0 +1,55 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-13 16:04:46
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-13 16:17:22
+ * @FilePath: \Web-learning\JavaScript\study06\练习01.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            /*
+            *为了使box1跟随移动，必须为它开启定位
+            */
+            position: absolute;
+        }
+    </style>
+</head>
+<script>
+    window.onload = function(){
+
+    /*
+    box1随着鼠标的移动而移动
+    */
+        var box1 = document.getElementById("box1");
+        document.onmousemove=function(event){
+        var left = event.clientX;
+        var top = event.clientY;
+
+        var sl= document.body.scrollLeft;
+        var st = document.body.scrollTop;
+
+        box1.style.left = left + sl + "px";
+        box1.style.top = top + st + "px";
+    };
+
+    }
+
+
+
+</script>
+<body style="height: 200px;">
+    <div id="box1"></div>
+</body>
+</html>
