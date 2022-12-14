@@ -1,0 +1,89 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-13 20:09:56
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-13 20:37:34
+ * @FilePath: \Web-learning\JavaScript\study07\histoy_location.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+			 * History
+			 * 	- 对象可以用来操作浏览器向前或向后翻页
+			 */
+
+             /*
+			 * length
+			 * 	- 属性，可以获取到当次访问的链接数量
+			 */
+
+             /*
+					 * back()
+					 * 	- 可以用来回退到上一个页面，作用和浏览器的回退按钮一样
+					 */
+
+                     /*
+					 * forward()
+					 * 	- 可以跳转下一个页面，作用和浏览器的前进按钮一样
+					 */
+
+                     /*
+					 * go()
+					 * 	- 可以用来跳转到指定的页面
+					 * 	- 它需要一个整数作为参数
+					 * 		1:表示向前跳转一个页面 相当于forward()
+					 * 		2:表示向前跳转两个页面
+					 * 		-1:表示向后跳转一个页面
+					 * 		-2:表示向后跳转两个页面
+					 */
+                    history.go(-2);
+
+            /*
+			 * Location
+			 * 	- 该对象中封装了浏览器的地址栏的信息
+			 */
+
+             //如果直接打印location，则可以获取到地址栏的信息（当前页面的完整路径）
+					//alert(location);
+					
+					/*
+					 * 如果直接将location属性修改为一个完整的路径，或相对路径
+					 * 	则我们页面会自动跳转到该路径，并且会生成相应的历史记录
+					 */
+					//location = "http://www.baidu.com";
+					//location = "01.BOM.html";
+					
+					/*
+					 * assign()
+					 * 	- 用来跳转到其他的页面，作用和直接修改location一样
+					 */
+					//location.assign("http://www.baidu.com");
+					
+					/*
+					 * reload()
+					 * 	- 用于重新加载当前页面，作用和刷新按钮一样
+					 * 	- 如果在方法中传递一个true，作为参数，则会强制清空缓存刷新页面
+					 */
+					//location.reload(true);
+					
+					/*
+					 * replace()
+					 * 	- 可以使用一个新的页面替换当前页面，调用完毕也会跳转页面
+					 * 		不会生成历史记录，不能使用回退按钮回退
+					 */
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-13 20:12:22
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-14 16:51:14
+ * @FilePath: \Web-learning\JavaScript\study07\定时与延时.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+            /*
+				 * JS的程序的执行速度是非常非常快的
+				 * 	如果希望一段程序，可以每间隔一段时间执行一次，可以使用定时调用
+				 */
+				/*for(var i=0 ; i<10000 ; i++){
+					count.innerHTML = i;
+					
+					alert("hello");
+				}*/
+				
+				/*
+				 * setInterval()
+				 * 	- 定时调用
+				 * 	- 可以将一个函数，每隔一段时间执行一次
+				 * 	- 参数：
+				 * 		1.回调函数，该函数会每隔一段时间被调用一次
+				 * 		2.每次调用间隔的时间，单位是毫秒
+				 * 
+				 * 	- 返回值：
+				 * 		返回一个Number类型的数据
+				 * 		这个数字用来作为定时器的唯一标识
+				 */
+
+                 //clearInterval()可以用来关闭一个定时器
+				//方法中需要一个定时器的标识作为参数，这样将关闭标识对应的定时器
+				//clearInterval(timer);
+
+
+
+                //开启一个定时器
+			/*setInterval(function(){
+				console.log(num++);
+			},3000);*/
+			
+			/*
+			 * 延时调用，
+			 * 	延时调用一个函数不马上执行，而是隔一段时间以后在执行，而且只会执行一次
+			 * 
+			 * 延时调用和定时调用的区别，定时调用会执行多次，而延时调用只会执行一次
+			 * 
+			 * 延时调用和定时调用实际上是可以互相代替的，在开发中可以根据自己需要去选择
+			 */
+             var timer = setTimeout(function(){
+				console.log(num++);
+			},3000);
+            //使用clearTimeout()来关闭一个延时调用
+			clearTimeout(timer);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
