@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-12-15 22:32:49
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-12-15 22:43:48
+ * @LastEditTime: 2022-12-16 10:16:31
  * @FilePath: \Web-learning\Bootstrap\demo\栅格实例.html
  * @Description: 
  * 
@@ -24,9 +24,9 @@
             <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
           </div>
         <div class="row">
-            <div class=" col-lg-3 col-sm-6 col-md-4">
+            <div class=" col-lg-3 col-lg-push-9  col-sm-6 col-sm-push-6 col-md-4 col-md-push-8 ">
               <div class="thumbnail">
-                <img src="img/bootstrap.png" alt="...">
+                <img src="img/webpack.png" alt="...">
                 <div class="caption">
                   <h3>Thumbnail label</h3>
                   <p class="text-center">@body</p>
@@ -34,7 +34,10 @@
                 </div>
               </div>
             </div>
-            <div class=" col-lg-3 col-sm-6 col-md-4">
+            <!-- 
+              col-md-pull-0，加上这个是为了平衡，防止错位，不能跳着写，状态需要同步到位
+             -->
+            <div class=" col-lg-3 col-lg-push-3 col-sm-6 col-sm-pull-6 col-md-4 col-md-pull-0">
                 <div class="thumbnail">
                   <img src="img/react.png" alt="...">
                   <div class="caption">
@@ -44,9 +47,9 @@
                   </div>
                 </div>
               </div>
-              <div class=" col-lg-3 col-sm-6 col-md-4">
+              <div class=" col-lg-3 col-lg-pull-3 col-sm-6  col-md-4 col-md-pull-8">
                 <div class="thumbnail">
-                  <img src="img/webpack.png" alt="...">
+                  <img src="img/yarn.png" alt="...">
                   <div class="caption">
                     <h3>Thumbnail label</h3>
                     <p class="text-center">@body</p>
@@ -54,9 +57,9 @@
                   </div>
                 </div>
               </div>
-              <div class=" col-lg-3 col-sm-6 col-md-4">
+              <div class=" col-lg-3 col-lg-pull-9 col-sm-6 col-md-4">
                 <div class="thumbnail">
-                  <img src="img/yarn.png" alt="...">
+                  <img src="img/bootstrap.png" alt="...">
                   <div class="caption">
                     <h3>Thumbnail label</h3>
                     <p class="text-center">@body</p>
