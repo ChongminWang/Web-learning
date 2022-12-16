@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2022-12-16 16:56:55
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2022-12-16 18:22:17
+ * @LastEditTime: 2022-12-16 20:40:48
  * @FilePath: \Web-learning\Bootstrap\Bootstrap实例\index.html
  * @Description: 
  * 
@@ -74,15 +74,15 @@
               <li><a href="#">简述</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">特点 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Chrome</a></li>
-                  <li><a href="#">Firefox</a></li>
-                  <li><a href="#">Safari</a></li>
-                  <li><a href="#">Opera</a></li>
-                  <li><a href="#">IE</a></li>
+                <ul class="dropdown-menu" id="qe-menu">
+                  <li><a href="#chrome">Chrome</a></li>
+                  <li><a href="#firefox">Firefox</a></li>
+                  <li><a href="#safari">Safari</a></li>
+                  <li><a href="#opera">Opera</a></li>
+                  <li><a href="#ie">IE</a></li>
                 </ul>
               </li>
-              <li><a href="#">关于</a></li>
+              <li><a href="javascript:;" data-target="#mymodel" data-toggle="modal">关于</a></li>
             </ul>
           </div>
         </div>
@@ -177,7 +177,122 @@
     <div class="container qe-hr">
         <hr>
     </div>
+
+    <!-- 标签页 -->
+    <div class="container" id="qe-tab">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist" id="qe-list">
+        <li role="presentation" class="active"><a href="#chrome" aria-controls="home" role="tab" data-toggle="tab">chrome</a></li>
+        <li role="presentation"><a href="#firefox" aria-controls="profile" role="tab" data-toggle="tab">firefox</a></li>
+        <li role="presentation"><a href="#safari" aria-controls="messages" role="tab" data-toggle="tab">safari</a></li>
+        <li role="presentation"><a href="#opera" aria-controls="settings" role="tab" data-toggle="tab">opera</a></li>
+        <li role="presentation"><a href="#ie" aria-controls="settings" role="tab" data-toggle="tab">ie</a></li>
+      </ul>
+    
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="chrome">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-7">
+                <h3>锄禾日当午</h3>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae amet ipsum qui veniam maiores quas veritatis explicabo, nulla nesciunt a officiis voluptas similique totam ad, consequatur eum minus pariatur est.
+              </div>
+              <div class="col-md-5">
+                <img src="img/chrome-logo.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="firefox">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-5">
+                <img src="img/firefox-logo.jpg" alt="">
+              </div>
+              <div class="col-md-7">
+                <h3>汗滴禾下土</h3>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae amet ipsum qui veniam maiores quas veritatis explicabo, nulla nesciunt a officiis voluptas similique totam ad, consequatur eum minus pariatur est.
+              </div> 
+            </div>
+        </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="safari">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-7">
+                <h3>谁知盘中餐</h3>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae amet ipsum qui veniam maiores quas veritatis explicabo, nulla nesciunt a officiis voluptas similique totam ad, consequatur eum minus pariatur est.
+              </div> 
+              <div class="col-md-5">
+                <img src="img/safari-logo.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="opera">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-5">
+                <img src="img/opera-logo.jpg" alt="">
+              </div>
+              <div class="col-md-7">
+                <h3>粒粒皆辛苦</h3>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae amet ipsum qui veniam maiores quas veritatis explicabo, nulla nesciunt a officiis voluptas similique totam ad, consequatur eum minus pariatur est.
+              </div> 
+            </div>
+        </div>
+      </div>
+        <div role="tabpanel" class="tab-pane" id="ie">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-7">
+                <h3>粒粒皆辛苦</h3>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae amet ipsum qui veniam maiores quas veritatis explicabo, nulla nesciunt a officiis voluptas similique totam ad, consequatur eum minus pariatur est.
+              </div> 
+              <div class="col-md-5">
+                <img src="img/ie-logo.jpg" alt="">
+              </div>
+            </div>
+        </div>
+      </div>
+    
+      <!-- 版权 -->
+      <div class="container">
+        &copy;前端
+      </div>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="mymodel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">模态框</h4>
+          </div>
+          <div class="modal-body">
+            <p>落霞与孤鹜齐飞，秋水共长天一色&hellip;</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
+  <script>
+    $("#qe-menu > li > a").click(function(e){
+      var href = $(this).attr("href");
+      // 对a标签进行禁止
+      e.preventDefault();
+      $("#qe-list > li > a[href="+(href)+"]").tab('show');
+      // console.log(href);
+      $(document).scrollTop($("#qe-tab").offset().top);
+    })
+  </script>
 </html>
