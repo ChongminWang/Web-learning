@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +34,27 @@
    需求2. 遍历输出数组中所有元素值
    需求3. 去掉"  my atguigu  "两端的空格
    */
+
+  //  需求1. 点击按钮: 显示按钮的文本, 显示一个新的输入框
+  $(function(){
+    $("#btn").click(function(){
+      alert($(this).html());
+      $('<input type="text" name="msg3"/><br/>').appendTo('div')
+    });
+
+    // 需求2. 遍历输出数组中所有元素值
+    var arr = [1,2,3,4,5,6,7,8]
+    $.each(arr,function (index,item) {
+      console.log(index,item)
+    })
+
+
+    // 需求3. 去掉"  my atguigu  "两端的空格
+    var str ='  好好学习，天天向上   '
+    console.log("----"+$.trim(str)+"----")
+  })
+
+
 </script>
 </body>
 

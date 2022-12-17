@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-17 22:56:16
+ * @FilePath: \Web-learning\jQuery\测试\12_offset和position.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,6 +68,28 @@
   2. 点击 btn2
     设置 div2 相对于页面的左上角的位置
    */
+
+  //  需求:
+  // 1. 点击 btn1
+  //   打印 div1 相对于页面左上角的位置
+  //   打印 div2 相对于页面左上角的位置
+  //   打印 div1 相对于父元素左上角的位置
+  //   打印 div2 相对于父元素左上角的位置
+    $('#btn1').click(function(){
+      var offset = $('.div1').offset();
+      console.log(offset.left,offset.top);
+
+      offsest = $('.div2').offset()
+      console.log(offsest.left,offsest.top)
+    })
+  // 2. 点击 btn2
+  //   设置 div2 相对于页面的左上角的位置
+    $('#btn2').click(function(){
+      $('.div2').offset({
+        left:50,
+        top:50
+      })
+    })
 </script>
 </body>
 </html>

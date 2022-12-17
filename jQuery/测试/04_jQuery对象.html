@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-17 13:00:41
+ * @FilePath: \Web-learning\jQuery\测试\04_jQuery对象.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html>
 
@@ -30,6 +39,32 @@
    需求3. 输出所有button标签的文本
    需求4. 输出'测试三'按钮是所有按钮中的第几个
    */
+
+  //  需求1. 统计一共有多少个按钮
+    var buttons = $('button');
+    console.log(buttons.length, buttons.size());
+    console.log(buttons instanceof Array )
+  //  需求2. 取出第2个button的文本
+    console.log(buttons[1].innerHTML,buttons.get(1).innerHTML)
+  //  需求3. 输出所有button标签的文本
+    buttons.each(function(){
+      console.log(this.innerHTML)
+    })
+  //  需求4. 输出'测试三'按钮是所有按钮中的第几个
+      console.log($("#btn3").index())
+
+
+      // 伪数组
+      /**
+       * object对象
+       * length 属性
+       * 数组下标属性
+       * 没有数组特别的方法：forEach()、push()、pop()等
+      */
+    //  定义一个伪数组
+    var weiarr = {}
+    weiarr.length=0
+    weiarr[0]="www"
 </script>
 </body>
 </html>

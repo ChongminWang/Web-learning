@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-17 21:03:48
+ * @FilePath: \Web-learning\jQuery\练习\常见效果\02_多Tab点击切换.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,6 +72,17 @@
     50元包月详情：<br/>&nbsp;每月无限量随心打
   </div>
 </div>
-
+<script src="../../js/jquery.min.js"></script>
+<script>
+  var $contents = $("#container>div")
+  //获取监听
+  var curent= 0;
+  $("#tab > li").click(function(){
+    $contents[curent].style.display="none"; 
+    var index =$(this).index();
+    $contents[index].style.display="block";
+    curent = index;
+  })
+</script>
 </body>
 </html>
