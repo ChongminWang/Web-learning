@@ -37,7 +37,7 @@ $(function () {
   // 3. 每隔3s自动滑动到下一页
   var intervalId = setInterval(function () {
     nextPage(true)
-  }, 1000)
+  }, 3000)
 
   // 4. 当鼠标进入图片区域时, 自动切换停止, 当鼠标离开后,又开始自动切换
   $container.hover(function () {

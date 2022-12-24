@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-24 21:29:07
+ * @FilePath: \Web-learning\jQuery\测试\20_事件委托2.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -36,7 +45,16 @@
 -->
 <script src="js/jquery-1.10.1.js"></script>
 <script>
+    $('ul').delegate('li','click', function(){
+      this.style.background = '#bfa'
+    })
+    $('#btn1').click(function(){
+      $('ul').append('<li>新增的li。。。</li>')
+    })
 
+    $('#btn2').click(function(){
+      $('ul').undelegate('click')
+    });
 </script>
 </body>
 </html>

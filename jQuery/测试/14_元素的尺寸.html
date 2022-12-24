@@ -32,7 +32,16 @@
 -->
 <script src="js/jquery-1.10.1.js" type="text/javascript"></script>
 <script>
+//内容尺寸
+  var $div = $('div')
+  console.log($div.width(),$div.height())
 
+  //内部尺寸
+  console.log($div.innerWidth(),$div.innerHeight())
+
+  //外部尺寸
+  console.log($div.outerHeight(),$div.outerWidth())
+  console.log($div.outerHeight(true),$div.outerWidth(true))
 </script>
 </body>
 

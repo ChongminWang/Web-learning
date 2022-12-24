@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-24 20:05:41
+ * @FilePath: \Web-learning\jQuery\练习\练习2_添加删除记录\练习2_添加删除记录_jQuery.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 
@@ -68,6 +77,58 @@
     </tr>
   </table>
 </div>
+<script src="jquery-1.10.1.js"></script>
+<script>
+  
+  $('#addEmpButton').click(function(){
+    // 获取数据
+      var $empName = $("#empName")
+      var $email = $("#email")
+      var $salary = $("#salary")
 
+      var empName = $empName.val()
+      var email = $email.val()
+      var salary = $salary.val()
+
+    //2. 生成对应的<tr>标签结构, 并插入#employeeTable的tbody中
+    /*
+     <tr>
+       <td>Bob</td>
+       <td>bob@tom.com</td>
+       <td>10000</td>
+       <td><a href="deleteEmp?id=003">Delete</a></td>
+     </tr>
+     */
+    var $xxx = $('<tr></tr>').append('<td>'+empName+'</td>')
+    .append('<td>'+email+'</td>')
+    .append('<td>'+salary+'</td>')
+    .append('<td><a href="deleteEmp?id="'+Date.now()+'>Delete</a></td>')
+    .appendTo("#employeeTable>tbody")
+
+    // 清除输入
+    $empName.val('')
+    $email.val('')
+    $salary.val('')
+
+
+  })
+
+  // 通过table实现对所有a的click事件委托
+  $('#employeeTable').delegate('a', 'click', clickDelete)
+
+  /*
+  点击删除的回调函数
+   */
+  function clickDelete () {
+    var $tr = $(this).parent().parent()
+    var name = $tr.children(':first').html()
+    if(confirm('确定删除'+name+'吗?')) {
+      $tr.remove()
+    }
+
+    return false
+  }
+
+</script>
 </body>
 </html>

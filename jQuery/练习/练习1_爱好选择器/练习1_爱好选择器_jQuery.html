@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+﻿<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-23 21:35:33
+ * @FilePath: \Web-learning\jQuery\练习\练习1_爱好选择器\练习1_爱好选择器_jQuery.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,6 +30,43 @@
   <input type="button" id="sendBtn" value="提　交"/>
 </form>
 
+<script src="jquery-1.10.1.js"></script>
+<script>
+    //  1. 点击'全选': 选中所有爱好
+    var $checkedAllBox = $("#checkedAllBox")
+    var $items = $(':checkbox[name="items"]')
+    $('#checkedAllBtn').click(function(){
+      $items.prop('checked', true)
+      $checkedAllBox.prop('checked', true)
+    })
+
+    //  2. 点击'全不选': 所有爱好都不勾选
+    $("#checkedNoBtn").click(function(){
+      $items.prop('checked', false)
+      $checkedAllBox.prop('checked', false)
+    })
+    //  3. 点击'反选': 改变所有爱好的勾选状态
+      $("#checkedRevBtn").click(function(){
+        $items.each(function(){
+          this.checked = !this.checked
+        })
+        $checkedAllBox.prop('checked', $items.filter(":not(:checked)").length===0)
+      })
+    //  4. 点击'提交': 提示所有勾选的爱好
+      $("#sendBtn").click(function(){
+        $items.filter(":checked").each(function(){
+          alert(this.value)
+        })
+      })
+    //  5. 点击'全选/全不选': 选中所有爱好, 或者全不选中
+      $("#checkedAllBox").click(function(){
+        $items.prop('checked', this.checked)
+      })
+    //  6. 点击某个爱好时, 必要时更新'全选/全不选'的选中状态
+      $items.click(function(){
+        $checkedAllBox.prop('checked', $items.filter(":not(:checked)").length===0)
+      })
+</script>
 </body>
 
 </html>

@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-23 21:58:37
+ * @FilePath: \Web-learning\jQuery\测试\17_文档_增删改.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,6 +91,24 @@
    5. 将在id为ul2的ul下的li(title为hello)全部替换为p
    6. 移除id为ul2的ul下的所有li
    */
+
+  //  1. 向id为ul1的ul下添加一个span(最后)
+    var $ul1 = $("#ul1");
+    // $ul1.append("<p>apend()添加的span</p>")
+    $("<p>apendTo()添加的span</p>").appendTo($ul1)
+
+  //  2. 向id为ul1的ul下添加一个span(最前)
+    $ul1.prepend("<p>prepend()添加的span</p>")
+
+  //  3. 在id为ul1的ul下的li(title为hello)的前面添加span
+    $ul1.children('li[title=hello]').before("<p>before()添加的span</p>")
+  //  4. 在id为ul1的ul下的li(title为hello)的后面添加span
+    $ul1.children("li[title=hello]").after("<p>after()添加的span</p>")
+  //  5. 将在id为ul2的ul下的li(title为hello)全部替换为p
+    $('#ul2>li[title=hello]').replaceWith("<p>replaceWith()添加的span</p>")
+  //  6. 移除id为ul2的ul下的所有li
+    // $('#ul2>li').remove()
+    $('#ul2').empty()
 </script>
 </body>
 </html>

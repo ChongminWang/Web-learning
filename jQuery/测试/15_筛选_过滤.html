@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-19 17:27:35
+ * @FilePath: \Web-learning\jQuery\测试\15_筛选_过滤.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +47,19 @@
    5. ul下li标签中title属性不为hello的
    6. ul下li标签中有span子标签的
    */
-
+  var $lis = $('ul >li');
+  //  1. ul下li标签第一个
+  // $lis.first().css("background","#bfa")
+  //  2. ul下li标签的最后一个
+    // $lis.last().css("background","#bfa")
+  //  3. ul下li标签的第二个
+    // $lis.eq(1).css("background","#bfa")
+  //  4. ul下li标签中title属性为hello的
+    // $lis.filter('[title=hello]').css("background","#bfa")
+  //  5. ul下li标签中title属性不为hello的
+      // $lis.not('[title=hello]').css("background","#bfa")
+  //  6. ul下li标签中有span子标签的
+      $lis.has('span').css("background","#bfa")
 </script>
 </body>
 </html>

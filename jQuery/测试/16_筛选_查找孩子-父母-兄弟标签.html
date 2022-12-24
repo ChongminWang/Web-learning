@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-23 21:01:07
+ * @FilePath: \Web-learning\jQuery\测试\16_筛选_查找孩子-父母-兄弟标签.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +54,22 @@
    4. id为cc的li标签的前面的所有li标签
    5. id为cc的li标签的所有兄弟li标签
    */
+  //  1. ul标签的第2个span子标签
+    var $ul = $('ul');
+    // $ul.children('span').css('background','#bfa')
 
+  //  2. ul标签的第2个span后代标签
+    // $ul.find('span:eq(1)').css('background','#bfa')
+
+  //  3. ul标签的父标签
+    // $ul.parent().css('background','#bfa')
+    
+  //  4. id为cc的li标签的前面的所有li标签
+    var $li = $('#cc');
+    // $li.prevAll('li').css('background','#bfa')
+
+  //  5. id为cc的li标签的所有兄弟li标签
+    $li.siblings("li").css('background','#bfa')
 </script>
 </body>
 </html>
