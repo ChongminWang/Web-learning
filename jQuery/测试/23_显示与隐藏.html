@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-30 20:11:14
+ * @FilePath: \Web-learning\jQuery\测试\23_显示与隐藏.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,6 +53,24 @@
   4. 点击btn4, 切换显示/隐藏
    */
 
+
+  // 1. 点击btn1, 立即显示
+  var $div1 = $('.div1')
+  $('#btn1').click(function(){
+      $div1.show();
+  })
+  // 2. 点击btn2, 慢慢显示
+  $('#btn2').click(function(){
+    $div1.show(1000);
+  })
+  // 3. 点击btn3, 慢慢隐藏
+  $('#btn3').click(function(){
+      $div1.hide(1000)
+  })
+  // 4. 点击btn4, 切换显示/隐藏
+  $('#btn4').click(function(){
+      $div1.toggle(1000)
+  })
 </script>
 </body>
 </html>

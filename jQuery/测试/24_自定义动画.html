@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-30 20:22:46
+ * @FilePath: \Web-learning\jQuery\测试\24_自定义动画.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +63,44 @@ jQuery动画本质 : 在指定时间内不断改变元素样式值来实现的
      2.停止当前动画，直接开始下一个动画
      3.停止并结束当前动画，开始下一个动画
    */
-
+/*  1.逐渐扩大
+     1.宽度扩大
+     2.宽度和高度扩大
+     3.先宽度扩大后高度扩大 */
+  var $div1 = $('.div1')
+  $('#btn1').click(function(){
+      /* $div1.animate({
+        width:500,
+        height:200
+      }) */
+      $div1.animate({
+        width:500
+      }).animate({height:200})
+  })
+   /* 2.向右移动
+     1.向右移动 固定的200px
+     2.基于当前位置向右移动 200px */
+  $('#btn2').click(function(){
+      $div1.animate({
+        width:'+=500',
+      })
+  })
+   /* 3.向左移动
+     1.向右移动 固定的200px
+     2.基于当前位置向右移动 200px
+     3.判断红框是否正在移动，如果正在移动的时候点击‘向左’按钮，打印出：‘别闹，正在动呢...’ */
+  $('#btn3').click(function(){
+      $div1.animate({
+        width:'-=500',
+      },3000)
+  })
+   /* 4.停止动画
+     1.停止所有的动画
+     2.停止当前动画，直接开始下一个动画
+     3.停止并结束当前动画，开始下一个动画 */
+  $('#btn4').click(function(){
+      $div1.stop()
+  })
 </script>
 </body>
 </html>

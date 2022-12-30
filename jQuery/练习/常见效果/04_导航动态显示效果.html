@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,6 +113,14 @@
     <li><a href="#">联系我们</a></li>
   </ul>
 </div>
-
+<script src="./jquery-1.10.1.js"></script>
+<script>
+  $('#navigation>ul>li:has(li)').hover(function(){
+    $(this).children('ul').stop().slideDown()
+  },function(){
+    $(this).children('ul').stop().slideUp()
+  })
+</script>
 </body>
+
 </html>

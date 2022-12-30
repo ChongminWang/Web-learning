@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-30 19:59:44
+ * @FilePath: \Web-learning\jQuery\测试\21_淡入淡出.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +37,7 @@
 </div>
 
 <!--
-淡入淡出: 不断改变元素的透明度来实现的
+淡入淡出: 不断改变元素的透明度（opacity）来实现的
 1. fadeIn(): 带动画的显示
 2. fadeOut(): 带动画隐藏
 3. fadeToggle(): 带动画切换显示/隐藏
@@ -45,7 +54,26 @@
    2. 点击btn3, 慢慢淡入
    3. 点击btn3, 淡出/淡入切换，动画结束时提示“动画结束了”
    */
+  //  1. 点击btn1, 慢慢淡出
+  //    * 无参
+  //    * 有参
+  //      * 字符串参数
+  //      * 数字参数
 
+    var $div1 = $('.div1')
+    $('#btn1').click(function(){
+      $div1.fadeOut(1000,function(){
+        alert("success!");
+      });
+    })
+    $('#btn2').click(function(){
+      $div1.fadeIn(1000,function(){})
+    })
+    $('#btn3').click(function(){
+      $div1.fadeToggle()
+    })
+  //  2. 点击btn3, 慢慢淡入
+  //  3. 点击btn3, 淡出/淡入切换，动画结束时提示“动画结束了”
 </script>
 </body>
 </html>

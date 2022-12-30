@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2022-12-14 22:01:51
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2022-12-30 20:45:40
+ * @FilePath: \Web-learning\jQuery\测试\27_onload与ready.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +36,21 @@
    3. 在 window.onload 中打印宽度
    4. 在 img 加载完成后打印宽度
    */
+
+  //  1. 直接打印img的宽度，观察其值
+  console.log("直接",$('#logo').width())
+  //  2. 在 $(function(){}) 中 打印 img 的宽度
+  $(function(){
+    console.log("$",$('#logo').width())
+  })
+  //  3. 在 window.onload 中打印宽度
+  window.onload = function(){
+    console.log("onload",$('#logo').width())
+  }
+  //  4. 在 img 加载完成后打印宽度
+  $('#logo').on('load',function(){
+    console.log("img",$(this).width())
+  });
 </script>
 </body>
 </html>
