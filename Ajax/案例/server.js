@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2023-01-07 10:13:38
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-01-07 14:49:58
+ * @LastEditTime: 2023-01-07 20:00:20
  * @FilePath: \Web-learning\Ajax\案例\server.js
  * @Description: 
  * 
@@ -73,6 +73,7 @@ app.all('/fetch-server', (request, response) => {
     // response.send('Hello jQuery AJAX');
     const data = {name:'尚硅谷'};
     response.send(JSON.stringify(data));
+    
 });
 
 //延时响应
