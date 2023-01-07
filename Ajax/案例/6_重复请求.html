@@ -1,0 +1,37 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-07 13:58:27
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-07 14:10:13
+ * @FilePath: \Web-learning\Ajax\案例\6_重复请求.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>发送请求</button>
+</body>
+<script>
+    var btns = document.querySelectorAll('button');
+    var x = new XMLHttpRequest();
+    var isSending = false;//是否正在发送Ajax请求
+    btns[0].onclick = function(){
+        if(isSending) x.abort();
+        x.open('GET', 'http://172.0.0.1:8080/delay');
+        isSending = true;
+        x.send();
+        x.onreadystatechange = function(){
+            if(x.readyState===4){
+                isSending=false;
+            }
+        }
+    }
+</script>
+</html>

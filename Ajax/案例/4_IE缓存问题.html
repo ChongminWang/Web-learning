@@ -1,0 +1,36 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-07 13:43:17
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-07 13:47:08
+ * @FilePath: \Web-learning\Ajax\案例\4_IE缓存问题.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            widows: 200px;
+            height: 100px;
+            border: solid 1px red;
+        }
+    </style>
+</head>
+<body>
+    <button>点击发送请求</button>
+    <div id="result"></div>
+</body>
+<script>
+    const btn = document.getElementsByClassName('button')[0];
+    const result = document.getElementById('result'); 
+    btn.addEventListener('click', function(){
+        console.log('result clicked');
+    })
+</script>
+</html>
