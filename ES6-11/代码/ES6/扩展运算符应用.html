@@ -1,0 +1,47 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-26 20:09:36
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 22:27:11
+ * @FilePath: \Web-learning\ES6-11\代码\ES6\扩展运算符应用.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展运算符应用</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        //1. 数组的合并 情圣  误杀  唐探
+        const kuaizi = ['王太利','肖央'];
+        const fenghuang = ['曾毅','玲花'];
+        // const zuixuanxiaopingguo = kuaizi.concat(fenghuang);//es5
+        const zuixuanxiaopingguo = [...kuaizi, ...fenghuang];//es6
+        console.log(zuixuanxiaopingguo);
+
+        //2. 数组的克隆
+        //浅拷贝：拷贝变量所存的值，如果是引用变量，则拷贝的是它里面的地址
+        const sanzhihua = ['E','G','M'];
+        const sanyecao = [...sanzhihua];//  ['E','G','M']
+        console.log(sanyecao);
+
+        //3. 将伪数组转为真正的数组
+        const divs = document.querySelectorAll('div');
+        const divArr = [...divs];
+        console.log(divArr);// arguments
+        
+
+
+
+
+        
+    </script>
+</body>
+</html>

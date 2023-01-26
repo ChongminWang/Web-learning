@@ -1,0 +1,37 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-26 20:09:36
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 22:49:32
+ * @FilePath: \Web-learning\ES6-11\代码\ES6\Symbol内置属性.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol内置属性</title>
+</head>
+<body>
+    <script>
+        class Person{
+            static [Symbol.hasInstance](param){
+                console.log(param);
+                console.log("我被用来检测类型了");
+                return false;
+            }
+        }
+
+        let o = {};
+
+        console.log(o instanceof Person);
+
+        const arr = [1,2,3];
+        const arr2 = [4,5,6];
+        arr2[Symbol.isConcatSpreadable] = true;//为false时，4，5，6不可展开
+        console.log(arr.concat(arr2));
+    </script>
+</body>
+</html>

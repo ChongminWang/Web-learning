@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 19:11:12
+ * @FilePath: \Web-learning\JavaScript高级\04_线程机制与事件机制\04_JS是单线程的.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,13 +27,32 @@
   * 初始化代码
   * 回调代码
 4. js引擎执行代码的基本流程
-  * 先执行初始化代码: 包含一些特别的代码
+  * 先执行初始化代码: 包含一些特别的代码   回调函数(异步执行)
     * 设置定时器
-    * 绑定监听
+    * 绑定事件监听
     * 发送ajax请求
   * 后面在某个时刻才会执行回调代码
 -->
 <script type="text/javascript">
+  setTimeout(function () {
+    console.log('timeout 2222')
+    alert('22222222')
+  }, 2000)
+  setTimeout(function () {
+    console.log('timeout 1111')
+    alert('1111111')
+  }, 1000)
+  setTimeout(function () {
+    console.log('timeout() 00000')
+  }, 0)
+  function fn() {
+    console.log('fn()')
+  }
+  fn()
+
+  console.log('alert()之前')
+  alert('------') //暂停当前主线程的执行, 同时暂停计时, 点击确定后, 恢复程序执行和计时
+  console.log('alert()之后')
 </script>
 </body>
 </html>
