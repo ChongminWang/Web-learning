@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:57:27
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\03_作用域与作用域链\04_作用域_面试题2.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +15,18 @@
 </head>
 <body>
 <script type="text/javascript">
+  var fn = function () {
+    console.log(fn)
+  }
+  fn()
 
+  var obj = {
+    fn2: function () {
+     console.log(fn2)  //此时obj不具备分割作用域的功能，所有会往外找fn2
+     //console.log(this.fn2)
+    }
+  }
+  obj.fn2()
 </script>
 </body>
 </html>

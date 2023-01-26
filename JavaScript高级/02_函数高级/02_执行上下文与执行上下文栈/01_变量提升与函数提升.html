@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:29:58
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\02_执行上下文与执行上下文栈\01_变量提升与函数提升.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +24,29 @@
 3. 问题: 变量提升和函数提升是如何产生的?
 -->
 <script type="text/javascript">
+  console.log('-----')
+  /*
+  面试题 : 输出 undefined
+   */
+  var a = 3
+  function fn () {
+    console.log(a)
+    var a = 4
+  }
+  fn()
 
+  console.log(b) //undefined  变量提升
+  fn2() //可调用  函数提升
+  // fn3() //不能  变量提升
+
+  var b = 3
+  function fn2() {
+    console.log('fn2()')
+  }
+
+  var fn3 = function () {
+    console.log('fn3()')
+  }
 </script>
 </body>
 </html>

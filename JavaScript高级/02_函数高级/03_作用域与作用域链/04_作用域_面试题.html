@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:53:27
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\03_作用域与作用域链\04_作用域_面试题.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +14,18 @@
   <title>04_作用域_面试题</title>
 </head>
 <body>
-<script type="text/javascript">
-
-</script>
+  <script type="text/javascript">
+    var x = 10;
+    function fn() {
+      console.log(x);
+    }
+    function show(f) {
+      var x = 20;
+      f();
+    }
+    show(fn); //10  作用域是静态的，是确定的，放在其他函数里执行不会改变作用域的位置
+  
+  
+  </script>
 </body>
 </html>

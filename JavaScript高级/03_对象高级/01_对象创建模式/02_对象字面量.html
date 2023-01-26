@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:35:01
+ * @FilePath: \Web-learning\JavaScript高级\03_对象高级\01_对象创建模式\02_对象字面量.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +21,27 @@
   * 问题: 如果创建多个对象, 有重复代码
 -->
 <script type="text/javascript">
+  var p = {
+    name: 'Tom',
+    age: 12,
+    setName: function (name) {
+      this.name = name
+    }
+  }
+
+  //测试
+  console.log(p.name, p.age)
+  p.setName('JACK')
+  console.log(p.name, p.age)
+
+  var p2 = {  //如果创建多个对象代码很重复
+    name: 'Bob',
+    age: 13,
+    setName: function (name) {
+      this.name = name
+    }
+  }
+
 </script>
 </body>
 </html>

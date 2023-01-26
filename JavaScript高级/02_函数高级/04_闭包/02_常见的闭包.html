@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 15:19:47
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\04_闭包\02_常见的闭包.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +20,27 @@
 2. 将函数作为实参传递给另一个函数调用
 -->
 <script type="text/javascript">
+  // 1. 将函数作为另一个函数的返回值
+  function fn1() {
+    var a = 2
+    function fn2() {
+      a++
+      console.log(a)
+    }
+    return fn2
+  }
+  var f = fn1()
+  f() // 3    调用外部函数时，闭包只产生一次
+  f() // 4
+
+  // 2. 将函数作为实参传递给另一个函数调用
+  function showDelay(msg, time) {
+    setTimeout(function () {
+      alert(msg)
+    }, time)
+  }
+  showDelay('atguigu', 2000)
+
 </script>
 </body>
 </html>

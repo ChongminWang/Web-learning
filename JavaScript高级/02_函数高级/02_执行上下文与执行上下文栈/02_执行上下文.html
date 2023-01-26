@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:30:10
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\02_执行上下文与执行上下文栈\02_执行上下文.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +17,7 @@
 <!--
 1. 代码分类(位置)
   * 全局代码
-  * 函数代码
+  * 函数(局部)代码
 2. 全局执行上下文
   * 在执行全局代码前将window确定为全局执行上下文
   * 对全局数据进行预处理
@@ -17,7 +26,7 @@
     * this==>赋值(window)
   * 开始执行全局代码
 3. 函数执行上下文
-  * 在调用函数, 准备执行函数体之前, 创建对应的函数执行上下文对象
+  * 在调用函数, 准备执行函数体之前, 创建对应的函数执行上下文对象(虚拟的, 存在于栈中)
   * 对局部数据进行预处理
     * 形参变量==>赋值(实参)==>添加为执行上下文的属性
     * arguments==>赋值(实参列表), 添加为执行上下文的属性
@@ -27,6 +36,15 @@
   * 开始执行函数体代码
 -->
 <script type="text/javascript">
+  console.log(a1, window.a1)
+  window.a2()
+  console.log(this)
+
+  var a1 = 3
+  function a2() {
+    console.log('a2()')
+  }
+  console.log(a1)
 
 </script>
 </body>

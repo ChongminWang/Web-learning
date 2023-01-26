@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:30:24
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\02_执行上下文与执行上下文栈\03_执行上下文栈.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +22,17 @@
 5. 当所有的代码执行完后, 栈中只剩下window
 -->
 <script type="text/javascript">
+  var a = 10
+  var bar = function (x) {
+    var b = 5
+    foo(x + b)
+  }
+  var foo = function (y) {
+    var c = 5
+    console.log(a + c + y)
+  }
+  bar(10)
+  // bar(10)
 </script>
 
 </body>

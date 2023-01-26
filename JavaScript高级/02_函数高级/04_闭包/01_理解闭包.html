@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:32:41
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\04_闭包\01_理解闭包.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +27,23 @@
   * 内部函数引用了外部函数的数据(变量/函数)
 -->
 <script type="text/javascript">
+  function fn1 () {
+    var a = 2
+    var b = 'abc'
+    function fn2 () { //执行函数定义就会产生闭包(不用调用内部函数)
+      console.log(a)
+    }
+    // fn2()
+  }
+  fn1()
 
+  function fun1() {
+    var a = 3
+    var fun2 = function () {
+      console.log(a)
+    }
+  }
+  fun1()
 </script>
 </body>
 </html>

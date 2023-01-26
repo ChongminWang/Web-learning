@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:33:13
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\04_闭包\04_闭包的生命周期.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +20,19 @@
 2. 死亡: 在嵌套的内部函数成为垃圾对象时
 -->
 <script type="text/javascript">
+  function fn1() {
+    //此时闭包就已经产生了(函数提升, 内部函数对象已经创建了)
+    var a = 2
+    function fn2 () {
+      a++
+      console.log(a)
+    }
+    return fn2
+  }
+  var f = fn1()
+  f() // 3
+  f() // 4
+  f = null //闭包死亡(包含闭包的函数对象成为垃圾对象)
 </script>
 </body>
 </html>

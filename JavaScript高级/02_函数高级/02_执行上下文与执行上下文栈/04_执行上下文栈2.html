@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:30:35
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\02_执行上下文与执行上下文栈\04_执行上下文栈2.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +16,29 @@
 <body>
 <!--
 1. 依次输出什么?
-2. 整个过程中产生了几个执行上下文?
+  gb: undefined
+  fb: 1
+  fb: 2
+  fb: 3
+  fe: 3
+  fe: 2
+  fe: 1
+  ge: 1
+2. 整个过程中产生了几个执行上下文?  5
 -->
 <script type="text/javascript">
+  console.log('gb: '+ i)
+  var i = 1
+  foo(1)
+  function foo(i) {
+    if (i == 4) {
+      return
+    }
+    console.log('fb:' + i)
+    foo(i + 1) //递归调用: 在函数内部调用自己
+    console.log('fe:' + i)
+  }
+  console.log('ge: ' + i)
 </script>
-
 </body>
 </html>

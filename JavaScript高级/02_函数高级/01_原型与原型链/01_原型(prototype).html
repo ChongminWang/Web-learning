@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-25 15:47:07
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\01_原型与原型链\01_原型(prototype).html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +22,28 @@
   * 作用: 函数的所有实例对象自动拥有原型中的属性(方法)
 -->
 <script type="text/javascript">
+
+  // 每个函数都有一个prototype属性, 它默认指向一个Object空对象(即称为: 原型对象)
+  console.log(Date.prototype, typeof Date.prototype)
+  function Fun () {//alt + shift +r(重命名rename)
+
+  }
+  console.log(Fun.prototype)  // 默认指向一个Object空对象(没有我们的属性)
+
+  // 原型对象中有一个属性constructor, 它指向函数对象
+  console.log(Date.prototype.constructor===Date)
+  console.log(Fun.prototype.constructor===Fun)
+
+  //给原型对象添加属性(一般是方法) ===>实例对象可以访问
+  Fun.prototype.test = function () {
+    console.log('test()')
+  }
+  var fun = new Fun()
+  fun.test()
+
+
+
+
 
 </script>
 </body>

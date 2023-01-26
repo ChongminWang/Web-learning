@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:34:52
+ * @FilePath: \Web-learning\JavaScript高级\03_对象高级\01_对象创建模式\01_Object构造函数模式.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +24,22 @@
   /*
   一个人: name:"Tom", age: 12
    */
+  // 先创建空Object对象
+  var p = new Object()
+  p = {} //此时内部数据是不确定的
+  // 再动态添加属性/方法
+  p.name = 'Tom'
+  p.age = 12
+  p.setName = function (name) {
+    this.name = name
+  }
+
+  //测试
+  console.log(p.name, p.age)
+  p.setName('Bob')
+  console.log(p.name, p.age)
+
+
 
 </script>
 </body>

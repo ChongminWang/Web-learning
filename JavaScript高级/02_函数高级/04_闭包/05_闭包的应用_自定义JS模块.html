@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:33:22
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\04_闭包\05_闭包的应用_自定义JS模块.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,5 +21,11 @@
   * 只向外暴露一个包信n个方法的对象或函数
   * 模块的使用者, 只需要通过模块暴露的对象调用方法来实现对应的功能
 -->
+<script type="text/javascript" src="myModule.js"></script>
+<script type="text/javascript">
+  var module = myModule()
+  module.doSomething()
+  module.doOtherthing()
+</script>
 </body>
 </html>

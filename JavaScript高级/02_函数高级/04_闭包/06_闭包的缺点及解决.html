@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:33:51
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\04_闭包\06_闭包的缺点及解决.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +23,17 @@
   * 及时释放
 -->
 <script type="text/javascript">
+  function fn1() {
+    var arr = new Array[100000]
+    function fn2() {
+      console.log(arr.length)
+    }
+    return fn2
+  }
+  var f = fn1()
+  f()
+
+  f = null //让内部函数成为垃圾对象-->回收闭包
 </script>
 </body>
 </html>

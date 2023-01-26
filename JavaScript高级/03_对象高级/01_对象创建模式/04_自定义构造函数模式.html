@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:35:22
+ * @FilePath: \Web-learning\JavaScript高级\03_对象高级\01_对象创建模式\04_自定义构造函数模式.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +22,31 @@
   * 问题: 每个对象都有相同的数据, 浪费内存
 -->
 <script type="text/javascript">
+  //定义类型
+  function Person(name, age) {
+    this.name = name
+    this.age = age
+    this.setName = function (name) {
+      this.name = name
+    }
+  }
+  var p1 = new Person('Tom', 12)
+  p1.setName('Jack')
+  console.log(p1.name, p1.age)
+  console.log(p1 instanceof Person)
+
+  function Student (name, price) {
+    this.name = name
+    this.price = price
+  }
+  var s = new Student('Bob', 13000)
+  console.log(s instanceof Student)
+
+  var p2 = new Person('JACK', 23)
+  console.log(p1, p2)
+
+
+
 
 </script>
 </body>

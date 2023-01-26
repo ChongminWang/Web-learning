@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-12 20:43:19
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-26 14:31:37
+ * @FilePath: \Web-learning\JavaScript高级\02_函数高级\03_作用域与作用域链\03_作用域链.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +24,19 @@
   * 再次执行2的相同操作, 直到全局作用域, 如果还找不到就抛出找不到的异常
 -->
 <script type="text/javascript">
-
+  var a = 1
+  function fn1() {
+    var b = 2
+    function fn2() {
+      var c = 3
+      console.log(c)
+      console.log(b)
+      console.log(a)
+      console.log(d)
+    }
+    fn2()
+  }
+  fn1()
 </script>
 
 </body>
