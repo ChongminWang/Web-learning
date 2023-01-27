@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-26 20:09:37
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-27 15:08:55
+ * @FilePath: \Web-learning\ES6-11\代码\ES6\生成器函数实例-2.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +41,7 @@
 
         function * gen(){
             let users = yield getUsers();
+            console.log(users);
             let orders = yield getOrders();
             let goods = yield getGoods();
         }

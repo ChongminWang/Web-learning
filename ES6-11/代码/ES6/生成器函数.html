@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-26 20:09:36
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-27 14:51:46
+ * @FilePath: \Web-learning\ES6-11\代码\ES6\生成器函数.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +19,9 @@
         //生成器其实就是一个特殊的函数
         //异步编程  纯回调函数  node fs  ajax mongodb
         //函数代码的分隔符
-        function * gen(){
+        function * gen(){//在function和函数名之间需要添加 * 号
             // console.log(111);
+            //yield关键字 可以让生成器停止和开始执行  也可以看作是函数代码的分割符
             yield '一只没有耳朵';
             // console.log(222);
             yield '一只没有尾部';
@@ -27,9 +37,9 @@
         console.log(iterator.next());
 
         //遍历
-        // for(let v of gen()){
-        //     console.log(v);
-        // }
+        for(let v of gen()){
+            console.log(v);
+        }
 
     </script>
 </body>

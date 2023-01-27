@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-26 20:09:36
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-27 16:07:19
+ * @FilePath: \Web-learning\ES6-11\代码\ES6\Set集合实践.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +18,8 @@
     <script>
         let arr = [1,2,3,4,5,4,3,2,1];
         //1. 数组去重
-        // let result = [...new Set(arr)];
-        // console.log(result);
+        let result = [...new Set(arr)];
+        console.log(result);
         //2. 交集
         let arr2 = [4,5,6,5,6];
         // let result = [...new Set(arr)].filter(item => {

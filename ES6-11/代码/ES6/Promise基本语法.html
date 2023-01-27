@@ -1,0 +1,38 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-27 15:14:16
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-27 15:20:40
+ * @FilePath: \Web-learning\ES6-11\代码\ES6\Promise基本语法.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //实例化Promise对象 
+        const promise = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                let data = '用户数据';
+                resolve(data);
+                let err = '读取失败';
+                reject(err);
+            },1000);
+        });
+        //调用promise对象的then方法
+        promise.then(function(value){
+        console.log(value);
+
+        },function(reason){
+        console.error(reason)
+        });
+    </script>
+</body>
+</html>

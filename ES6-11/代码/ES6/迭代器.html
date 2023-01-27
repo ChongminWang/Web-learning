@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-26 20:09:37
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-27 14:39:01
+ * @FilePath: \Web-learning\ES6-11\代码\ES6\迭代器.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +20,9 @@
         const xiyou = ['唐僧','孙悟空','猪八戒','沙僧'];
 
         //使用 for...of 遍历数组
-        // for(let v of xiyou){
-        //     console.log(v);
-        // }
+        for(let v of xiyou){
+            console.log(v);
+        }
 
         let iterator = xiyou[Symbol.iterator]();
 

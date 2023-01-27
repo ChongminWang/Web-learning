@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-26 20:09:36
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-27 16:05:40
+ * @FilePath: \Web-learning\ES6-11\代码\ES6\Set.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +21,16 @@
         let s2 = new Set(['大事儿','小事儿','好事儿','坏事儿','小事儿']);
 
         //元素个数
-        // console.log(s2.size);
+        console.log(s2.size);
         //添加新的元素
-        // s2.add('喜事儿');
+        s2.add('喜事儿');
         //删除元素
-        // s2.delete('坏事儿');
+        s2.delete('坏事儿');
         //检测
-        // console.log(s2.has('糟心事'));
+        console.log(s2.has('喜事儿'));
         //清空
-        // s2.clear();
-        // console.log(s2);
+        s2.clear();
+        console.log(s2);
 
         for(let v of s2){
             console.log(v);
