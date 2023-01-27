@@ -18,8 +18,7 @@
         // await 要放在 async 函数中.
         async function main() {
             try {
-                let result = await p;
-                //
+                let result = await p;//await返回的是promise的成功的值   如果失败了，就会有try catch进行捕获
                 console.log(result);
             } catch (e) {
                 console.log(e);

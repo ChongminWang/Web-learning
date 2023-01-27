@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-26 20:10:24
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-27 20:25:46
+ * @FilePath: \Web-learning\ES6-11\代码\ES10\3-Array.prototype.flat与flatMap.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +17,11 @@
 <body>
     <script>
         //flat 平
-        //将多维数组转化为低位数组
-        // const arr = [1,2,3,4,[5,6]];
-        // const arr = [1,2,3,4,[5,6,[7,8,9]]];
+        //将多维数组转化为低维数组
+        const arr1 = [1,2,3,4,[5,6]];
+        const arr2 = [1,2,3,4,[5,6,[7,8,9]]];
         //参数为深度 是一个数字
-        // console.log(arr.flat(2));  
+        console.log(arr2.flat(2));  
 
         //flatMap
         const arr = [1,2,3,4];

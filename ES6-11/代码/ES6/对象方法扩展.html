@@ -1,3 +1,12 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-26 20:09:36
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-27 19:19:57
+ * @FilePath: \Web-learning\ES6-11\代码\ES6\对象方法扩展.html
+ * @Description: 
+ * 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,21 +22,22 @@
         // console.log(NaN === NaN);// === 
 
         //2. Object.assign 对象的合并
-        // const config1 = {
-        //     host: 'localhost',
-        //     port: 3306,
-        //     name: 'root',
-        //     pass: 'root',
-        //     test: 'test'
-        // };
-        // const config2 = {
-        //     host: 'http://atguigu.com',
-        //     port: 33060,
-        //     name: 'atguigu.com',
-        //     pass: 'iloveyou',
-        //     test2: 'test2'
-        // }
-        // console.log(Object.assign(config1, config2));
+        //进行配置合并 使用此方法最合适
+        const config1 = {
+            host: 'localhost',
+            port: 3306,
+            name: 'root',
+            pass: 'root',
+            test: 'test'
+        };
+        const config2 = {
+            host: 'http://atguigu.com',
+            port: 33060,
+            name: 'atguigu.com',
+            pass: 'iloveyou',
+            test2: 'test2'
+        }
+        console.log(Object.assign(config1, config2));
 
         //3. Object.setPrototypeOf 设置原型对象  Object.getPrototypeof
         const school = {
