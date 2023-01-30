@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bulid": "webpack",
-    "start": "webpack serve --open chrome.exe"
+    "start": "webpack serve --open"
   },
   "author": "",
   "license": "ISC",

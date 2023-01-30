@@ -3,6 +3,7 @@ const path =require('path');
 
 //引入html插件 npm i -D html-webpack-plugin
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 //webpack中所有的配置信息都应该写在model.exports中
 module.exports = {
@@ -36,6 +37,9 @@ module.exports = {
 
     //配置webpack插件
     plugins:[
+
+        //每次会清空dist目录
+        new CleanWebpackPlugin(),
         new HTMLWebpackPlugin({
             title:"自定义标题",
             //根据模板来生成
@@ -43,6 +47,10 @@ module.exports = {
         }),
     ],
 
+    //用来设置引用模块
+    resolve:{
+        extensions:['.ts','.js']
+    },
 
     mode:"production"
 }
