@@ -1,0 +1,39 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'G:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'G:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'test'
+1 verbose cli ]
+2 info using npm@6.14.13
+3 info using node@v14.17.2
+4 verbose run-script [ 'pretest', 'test', 'posttest' ]
+5 info lifecycle ts_webpack@1.0.0~pretest: ts_webpack@1.0.0
+6 info lifecycle ts_webpack@1.0.0~test: ts_webpack@1.0.0
+7 verbose lifecycle ts_webpack@1.0.0~test: unsafe-perm in lifecycle true
+8 verbose lifecycle ts_webpack@1.0.0~test: PATH: G:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;E:\桌面\前端技术学习文档\Web-learning\TypeScript\TS_Webpack\node_modules\.bin;E:\miniconda3\condabin;E:\CUDA\v10.1\bin;E:\CUDA\v10.1\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\libnvvp;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;G:\Program Files\Git\Git\cmd;G:\Program Files\nodejs\;G:\Program Files\nodejs\node_global;F:\Program Files (x86)\conda\Library\bin;E:\miniconda3\Library\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\NVIDIA Corporation\Nsight Compute 2019.4.0\;E:\matlab\matlab2015b\runtime\win64;E:\matlab\matlab2015b\bin;E:\matlab\matlab2015b\polyspace\bin;E:\miniconda3;E:\miniconda3\Library\mingw-w64\bin;E:\miniconda3\Library\usr\bin;E:\miniconda3\Library\bin;E:\miniconda3\Scripts;C:\Users\惟愿倾汝心\AppData\Local\Microsoft\WindowsApps;G:\Program Files\JetBrains\PyCharm Community Edition 2020.3.5\bin;;G:\Program Files\Microsoft VS Code\Microsoft VS Code\bin;G:\Program Files (x86)\Tencent\QQGameTempest\Hall.57821\;F:\OSG\x86\OpenSceneGraph-OpenSceneGraph-3.0.1\bin\bin;F:\OSG\x86\OpenSceneGraph-OpenSceneGraph-3.0.1\bin\share\OpenSceneGraph\bin;F:\OSG\x86\3rdParty_VC9sp1_x86_x64_V7\3rdParty_x86_x64\x64\bin;D:\MinGW\bin;G:\mongodb\bin;"C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Windows\SysWOW64";
+9 verbose lifecycle ts_webpack@1.0.0~test: CWD: E:\桌面\前端技术学习文档\Web-learning\TypeScript\TS_Webpack
+10 silly lifecycle ts_webpack@1.0.0~test: Args: [ '/d /s /c', 'echo "Error: no test specified" && exit 1' ]
+11 silly lifecycle ts_webpack@1.0.0~test: Returned: code: 1  signal: null
+12 info lifecycle ts_webpack@1.0.0~test: Failed to exec test script
+13 verbose stack Error: ts_webpack@1.0.0 test: `echo "Error: no test specified" && exit 1`
+13 verbose stack Exit status 1
+13 verbose stack     at EventEmitter.<anonymous> (G:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\index.js:332:16)
+13 verbose stack     at EventEmitter.emit (events.js:375:28)
+13 verbose stack     at ChildProcess.<anonymous> (G:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\lib\spawn.js:55:14)
+13 verbose stack     at ChildProcess.emit (events.js:375:28)
+13 verbose stack     at maybeClose (internal/child_process.js:1055:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:288:5)
+14 verbose pkgid ts_webpack@1.0.0
+15 verbose cwd E:\桌面\前端技术学习文档\Web-learning\TypeScript\TS_Webpack
+16 verbose Windows_NT 10.0.19044
+17 verbose argv "G:\\Program Files\\nodejs\\node.exe" "G:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "test"
+18 verbose node v14.17.2
+19 verbose npm  v6.14.13
+20 error code ELIFECYCLE
+21 error errno 1
+22 error ts_webpack@1.0.0 test: `echo "Error: no test specified" && exit 1`
+22 error Exit status 1
+23 error Failed at the ts_webpack@1.0.0 test script.
+23 error This is probably not a problem with npm. There is likely additional logging output above.
+24 verbose exit [ 1, true ]
