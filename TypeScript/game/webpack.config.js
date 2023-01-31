@@ -64,6 +64,30 @@ module.exports = {
                 ],
                 //要排除的文件
                 exclude:/_cacache && node_modules/
+            },
+
+            //设置less文件的处理
+            {
+                test:/\.less$/,
+                use:[
+                    //先执行谁，谁就写在最下面
+                    'style-loader',
+                    'css-loader',
+                    //引入postcss
+                    {
+                        loader:"postcss-loader",
+                        options:{
+                            postcssOptions:{
+                                plugins:[
+                                    [
+                                        "postcss-preset-env",
+                                    ]
+                                ]
+                            }
+                        }
+                    },
+                    'less-loader',
+                ]
             }
         ]
     },
