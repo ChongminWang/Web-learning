@@ -2,8 +2,8 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2023-01-30 15:39:08
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-01-30 15:39:14
- * @FilePath: \Web-learning\TypeScript\second\接口.ts
+ * @LastEditTime: 2023-01-31 14:39:05
+ * @FilePath: \Web-learning\TypeScript\second\code\接口.ts
  * @Description: 
  * 
  */
@@ -62,6 +62,16 @@
             console.log('大家好~~');
         }
 
+    }
+
+    interface book{
+        name: string;
+    }
+    class Book implements book{
+        name: string;
+        constructor(name: string) {
+            this.name = name;
+        }
     }
 
 })();

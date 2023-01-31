@@ -1,10 +1,19 @@
 /*
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-01-30 15:39:39
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-01-31 14:59:06
+ * @FilePath: \Web-learning\TypeScript\second\code\泛型.ts
+ * @Description: 
+ * 
+ */
+/*
 function fn(a: any): any{
     return a;
 }*/
 
 /*
-*   在定义函数或是类时，如果遇到类型不明确就可以使用泛型
+*   在定义函数或是类时，如果遇到类型不明确就可以使用泛型  T
 *
 * */
 

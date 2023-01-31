@@ -64,4 +64,6 @@
     dog.run();
     console.log(cat);
     cat.sayHello();
-
+
+
+})();

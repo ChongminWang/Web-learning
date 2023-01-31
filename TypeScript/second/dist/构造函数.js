@@ -27,4 +27,6 @@ class Dog {
 }
 const dog = new Dog('小黑', 4);
 const dog2 = new Dog('小白', 2);
-// cons
+// console.log(dog);
+// console.log(dog2);
+dog2.bark();
