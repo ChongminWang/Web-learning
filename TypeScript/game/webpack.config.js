@@ -19,7 +19,9 @@ module.exports = {
         //打包后的文件
         filename:'bundle.js',
         environment: {
-            arrowFunction: false // 关闭webpack的箭头函数，可选  一般兼容ie时设置
+            arrowFunction: false, // 关闭webpack的箭头函数，可选  一般兼容ie时设置
+            //兼容ie10以下版本
+            // const:false
         }
     },
 
@@ -103,7 +105,7 @@ module.exports = {
         new HTMLWebpackPlugin({
             title:"贪吃蛇",
             //根据模板来生成
-            // template:'./src/index.html'
+            template:'./src/index.html'
         }),
     ],
 
