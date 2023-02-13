@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 容器 -->
+    <div id="test"></div>
+    
+    <!-- 引入库，注意引入顺序 -->
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+
+    <script type="text/babel">
+        //创建组件
+        class Weathr extends React.Component {
+            //构造器调用几次？ ———— 1次
+            constructor(props) {
+                super(props);
+                //初始化状态
+                this.state = {isHot:false};
+                //解决changeWeather中this指向问题
+                this.changeWeather = this.changeWeather.bind(this);
+            }
+            render(){
+                //render调用几次？ ———— 1+n次 1是初始化的那次 n是状态更新的次数
+                console.log(this);
+                return <h1 onClick={this.changeWeather}>今天天气很{this.state.isHot? '炎热' : '凉爽'}</h1>
+            }
+            changeWeather(){
+                //点几次，该方法调几次
+                //changeWeather放在哪里？ ———— Weather的原型对象上，供实例使用
+				//由于changeWeather是作为onClick的回调，所以不是通过实例调用的，是直接调用
+				//类中的方法默认开启了局部的严格模式，所以changeWeather中的this为undefined
+                // console.log(this.state.isHot);
+                //获取原来的ishot的值
+                const isHot = this.state.isHot
+                //状态不可直接更改，要借助内置的api更改
+                // this.state.isHot = !isHot 错误写法
+                //状态必须通过setState更新,且更新是一种合并，不是替换
+                this.setState({isHot:!isHot})
+
+            }
+        }
+        //渲染DOM
+        ReactDOM.render(<Weathr />, document.getElementById("test"));
+
+
+    </script>
+</body>
+</html>
