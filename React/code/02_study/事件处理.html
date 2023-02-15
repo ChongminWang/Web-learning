@@ -1,8 +1,8 @@
 <!--
  * @Author: 2577624123 2577624123@qq.com
- * @Date: 2023-02-07 16:02:00
+ * @Date: 2023-02-07 16:00:04
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-07 16:02:08
+ * @LastEditTime: 2023-02-14 18:09:52
  * @FilePath: \Web-learning\React\code\02_study\事件处理.html
  * @Description: 
  * 
@@ -25,7 +25,31 @@
     <script src="./js/babel.min.js"></script>
 
     <script type="text/babel">
-        
+        //创建组件
+        class Demo extends React.Component {
+            /*
+                React.createRef调用后可以返回一个容器，该容器可以存储被ref所标识的节点 该容器’专人专用‘
+            */
+            myRef = React.createRef()
+            //展示左侧输入框的数据
+            showData = ()=>{
+                alert(this.myRef.current.value)
+            }
+            showData2 = ()=>{
+                const {input2} = this
+                alert(input2.value)
+            }
+            render() {
+                return (
+                    <div>
+                        <input ref={this.myRef} type="text" placeholder='点击按钮提示数据'/>
+                        <button onClick={this.showData}>点我提示左侧的数据</button>
+                    </div>
+                )
+            }
+        }
+        //渲染组件
+        ReactDOM.render(<Demo/>,document.getElementById('test'))
     </script>
 </body>
 </html>

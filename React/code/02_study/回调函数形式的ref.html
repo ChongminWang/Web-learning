@@ -1,8 +1,8 @@
 <!--
  * @Author: 2577624123 2577624123@qq.com
- * @Date: 2023-02-07 16:00:30
+ * @Date: 2023-02-07 16:00:04
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-07 16:00:49
+ * @LastEditTime: 2023-02-14 17:03:23
  * @FilePath: \Web-learning\React\code\02_study\回调函数形式的ref.html
  * @Description: 
  * 
@@ -25,7 +25,30 @@
     <script src="./js/babel.min.js"></script>
 
     <script type="text/babel">
-        
+        //创建组件
+        class Demo extends React.Component {
+            //展示左侧输入框的数据
+            showData = ()=>{
+                const {input1} = this
+                // console.log(this.refs.input1.value);
+                alert(input1.value)
+            }
+            showData2 = ()=>{
+                const {input2} = this
+                alert(input2.value)
+            }
+            render() {
+                return (
+                    <div>
+                        <input ref={currentNode=>this.input1=currentNode} type="text" placeholder='点击按钮提示数据'/>
+                        <button onClick={this.showData}>点我提示左侧的数据</button>
+                        <input onBlur={this.showData2} ref={currentNode=>this.input2=currentNode} type="text" placeholder='失去焦点提示数据'/>
+                    </div>
+                )
+            }
+        }
+        //渲染组件
+        ReactDOM.render(<Demo/>,document.getElementById('test'))
     </script>
 </body>
 </html>

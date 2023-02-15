@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2023-02-07 15:58:57
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-07 15:59:04
+ * @LastEditTime: 2023-02-14 10:12:54
  * @FilePath: \Web-learning\React\code\01_study\函数组件使用props.html
  * @Description: 
  * 
@@ -17,7 +17,7 @@
 </head>
 <body>
     <!-- 容器 -->
-    <div id="test"></div>
+    <div id="test1"></div>
     
     <!-- 引入库，注意引入顺序 -->
     <script src="./js/react.development.js"></script>
@@ -25,7 +25,47 @@
     <script src="./js/babel.min.js"></script>
 
     <script type="text/babel">
+        //创建组件
+        // class Person extends React.Component{
         
+        // //构造器是否接收props,是否传递给super，取决于：是否希望在构造器中通过this调用props
+
+        // //对标签属性进行类别、必要性的限制
+        // static propTypes = {
+        //     name:PropTypes.string.isRequired,
+        //     sex:PropTypes.string,
+        //     age:PropTypes.number
+        // }
+        // //对标签默认属性的设置
+        // static defaultProps={
+        //     sex:'男',
+        //     age:22
+        // }
+        // render(){
+        //     //props是只读的
+        //     const {name,age,sex} = this.props
+        //     return(
+        //         <ul>
+        //             <li>姓名：{name}</li>
+        //             <li>性别：{sex}</li>
+        //             <li>年龄：{age+1}</li>
+        //         </ul>
+        //     )
+        //     }
+        // }
+        
+        function Person (props){
+            const {name,age,sex} = props
+            return (
+                <ul>
+                    <li>姓名：{name}</li>
+                    <li>性别：{sex}</li>
+                    <li>年龄：{age}</li>
+                </ul>
+            )
+        }
+        //渲染组件到页面
+        ReactDOM.render(<Person name='tom' sex='女' age={15}/>,document.getElementById('test1'));
     </script>
 </body>
 </html>

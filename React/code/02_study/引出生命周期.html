@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2023-02-07 16:04:16
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-07 16:04:22
+ * @LastEditTime: 2023-02-15 17:35:59
  * @FilePath: \Web-learning\React\code\02_study\引出生命周期.html
  * @Description: 
  * 
@@ -25,7 +25,44 @@
     <script src="./js/babel.min.js"></script>
 
     <script type="text/babel">
-        
+        //创建组件
+        //生命周期回调函数 《=》生命周期钩子函数 /  生命周期函数  / 生命周期钩子
+        class Life extends React.Component{
+            state = { opacity : 1}
+            death  = ()=>{
+                ReactDOM.unmountComponentAtNode(document.getElementById('test'));
+            }
+            //componentDidMount调用的时机：组件挂载完毕
+            componentDidMount(){
+                this.timer =  setInterval(()=>{
+                    //获取初始状态
+                    let {opacity} = this.state
+                    //减小0.1
+                    opacity-=0.1
+                    //设置新的透明度
+                    if(opacity<=0){
+                        opacity=1
+                    }
+                    this.setState({opacity})
+                },200)
+            }
+            //组件将要被卸载的时候
+            componentWillUnmount(){
+                clearInterval(this.timer)
+            }
+            //render调用的时机：初始化渲染、状态更新后
+            render(){
+                
+                return (
+                    <div>
+                        <h2 style={{opacity:this.state.opacity}}>React 学不会怎么办</h2>
+                        <button onClick={this.death}>不活了</button>
+                    </div>
+                )
+            }
+        }
+        //渲染组件
+        ReactDOM.render(<Life/>,document.getElementById('test'));
     </script>
 </body>
 </html>

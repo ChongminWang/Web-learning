@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2023-02-07 16:03:43
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-07 16:03:49
+ * @LastEditTime: 2023-02-14 19:42:58
  * @FilePath: \Web-learning\React\code\02_study\不用函数柯里化的实现.html
  * @Description: 
  * 
@@ -25,7 +25,34 @@
     <script src="./js/babel.min.js"></script>
 
     <script type="text/babel">
-        
+        //创建组件
+        class Login extends React.Component {
+            state = {
+                username:'',
+                password:'',
+            }
+            handleSubmit = (event)=>{
+                //阻止表单提交
+                event.preventDefault()
+                const {username,password} = this.state
+                // alert(username.value      +   password.value)
+            }
+            //保存表单数据到状态中
+            demo = (dataType,value)=>{
+                    this.setState({[dataType]:value})
+                }
+            render() {
+                return (
+                    <form action="http://www.atgui.com" onSubmit={this.handleSubmit}>
+                        用户名：<input onChange={(event)=>{this.demo('username',event.target.value)}} type="text" name='username'/>
+                        密码  ：<input onChange={(event)=>{this.demo('password',event.target.value)}}  type="password" name='password'/>
+                        <button>登录</button>
+                    </form>
+                )
+            }
+        }
+        //渲染组件
+        ReactDOM.render(<Login/>,document.getElementById('test'))
     </script>
 </body>
 </html>

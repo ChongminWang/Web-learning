@@ -1,8 +1,8 @@
 <!--
  * @Author: 2577624123 2577624123@qq.com
- * @Date: 2023-02-07 16:02:48
+ * @Date: 2023-02-07 16:02:30
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-07 16:02:54
+ * @LastEditTime: 2023-02-14 18:51:33
  * @FilePath: \Web-learning\React\code\02_study\受控组件.html
  * @Description: 
  * 
@@ -25,7 +25,38 @@
     <script src="./js/babel.min.js"></script>
 
     <script type="text/babel">
-        
+        //受控组件
+        //  页面中所有的输入类的dom，随着你的输入，存入状态中去，用时从状态中取出来，就是受控组件
+        //创建组件
+        class Login extends React.Component {
+            state = {
+                username:'',
+                password:'',
+            }
+            handleSubmit = (event)=>{
+                //阻止表单提交
+                event.preventDefault()
+                const {username,password} = this.state
+                // alert(username.value      +   password.value)
+            }
+            demo = (event)=>{
+                this.setState({username:event.target.value})
+            }
+            demo1 = (event)=>{
+                this.setState({password:event.target.value})
+            }
+            render() {
+                return (
+                    <form action="http://www.atgui.com" onSubmit={this.handleSubmit}>
+                        用户名：<input onChange={this.demo} type="text" name='username'/>
+                        密码  ：<input onChange={this.demo1}  type="password" name='password'/>
+                        <button>登录</button>
+                    </form>
+                )
+            }
+        }
+        //渲染组件
+        ReactDOM.render(<Login/>,document.getElementById('test'))
     </script>
 </body>
 </html>

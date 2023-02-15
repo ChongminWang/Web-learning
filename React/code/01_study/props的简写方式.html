@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2023-02-07 15:58:07
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-13 19:43:24
+ * @LastEditTime: 2023-02-14 09:58:20
  * @FilePath: \Web-learning\React\code\01_study\props的简写方式.html
  * @Description: 
  * 
@@ -31,6 +31,9 @@
     <script type="text/babel">
         //创建组件
         class Person extends React.Component{
+        
+        //构造器是否接收props,是否传递给super，取决于：是否希望在构造器中通过this调用props
+
         //对标签属性进行类别、必要性的限制
         static propTypes = {
             name:PropTypes.string.isRequired,
@@ -56,11 +59,8 @@
         }
         
         //渲染组件到页面
-        ReactDOM.render(<Person name='tom' age={19} sex='女'/>,document.getElementById('test1'));
-        ReactDOM.render(<Person name='jerr'  sex='女'/>,document.getElementById('test2'));
-        const p = {name:'laoliu',sex:'男',age:19}
-        // ReactDOM.render(<Person name='jack' age='35' sex='男'/>,document.getElementById('test3'));
-        ReactDOM.render(<Person {...p}/>,document.getElementById('test3'));
+        ReactDOM.render(<Person name='tom' />,document.getElementById('test1'));
+        
     </script>
 </body>
 </html>

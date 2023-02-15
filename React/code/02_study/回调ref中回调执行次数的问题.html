@@ -1,8 +1,8 @@
 <!--
  * @Author: 2577624123 2577624123@qq.com
- * @Date: 2023-02-07 16:01:10
+ * @Date: 2023-02-07 16:00:04
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-07 16:01:15
+ * @LastEditTime: 2023-02-14 17:10:01
  * @FilePath: \Web-learning\React\code\02_study\回调ref中回调执行次数的问题.html
  * @Description: 
  * 
@@ -25,7 +25,37 @@
     <script src="./js/babel.min.js"></script>
 
     <script type="text/babel">
-        
+        //创建组件
+        class Demo extends React.Component {
+            state = {isHot:false}
+            showInfo = ()=>{
+                const {input1} = this
+                alert(input1.value)
+            }
+            changeWeather = ()=>{
+                const {isHot} = this.state
+                this.setState({isHot:!isHot})
+            }
+            saveInput = (c)=>{
+                this.input1 = c
+                
+            }
+            render() {
+                const {isHot} = this.state
+                return (
+                    <div>
+                        <h2>今天天气很{isHot? '炎热':'凉爽'}</h2>
+                        {/*<input ref={currentNode=>this.input1=currentNode} type="text" placeholder='点击按钮提示数据'/>*/}
+                        <input ref={this.saveInput} type="text" placeholder='点击按钮提示数据'/>
+                        <button onClick={this.showInfo}>点我提示输入的数据</button>
+                        <button onClick={this.changeWeather}>点我切换天气</button>
+                    
+                    </div>
+                )
+            }
+        }
+        //渲染组件
+        ReactDOM.render(<Demo/>,document.getElementById('test'))
     </script>
 </body>
 </html>

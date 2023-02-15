@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2023-02-07 16:05:03
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-07 16:05:09
+ * @LastEditTime: 2023-02-15 21:03:22
  * @FilePath: \Web-learning\React\code\02_study\react生命周期_新.html
  * @Description: 
  * 
@@ -21,12 +21,121 @@
     <div id="test"></div>
     
     <!-- 引入库，注意引入顺序 -->
-    <script src="./js/react.development.js"></script>
-    <script src="./js/react-dom.development.js"></script>
-    <script src="./js/babel.min.js"></script>
+    <script src="./js17.0/react.development.js"></script>
+    <script src="./js17.0/react-dom.development.js"></script>
+    <script src="./js17.0/babel.min.js"></script>
 
     <script type="text/babel">
-        
+        //新的生命周期下  UNSAFE_componentWillMount UNSAFE_componentWillUpdate UNSAFE_componentWillReceiveProps 这三个需要加上新的UNSAFE_
+
+        //react新的生命周期与旧的生命周期相比，它废弃了componentWillMount,componentWillUpdate,componentWillReceiveProps这三个钩子的同时，他又提出了两个新的钩子，分别为getDerivedStateFromProps和getSnapshotBeforeUpdate,这两种的用法及其少
+
+        class Addd extends React.Component {
+
+        //构造器
+        constructor(props) {
+            console.log('construct')
+            super(props);
+            this.state  = {count:0}
+        }
+        sum = ()=>{
+            const {count} = this.state
+            this.setState({count:count+1})
+        }
+        death = ()=>{
+            ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+        }
+        force = ()=>{
+            //强制更新，不需要在意阀门是否开启
+            this.forceUpdate()
+        }
+
+        static getDerivedStateFromProps(){
+            console.log('getDerivedStateFromProps');
+            return null;//如果返回的是对象，则会导致状态不会在进行修改
+        }
+
+        //组件将要挂载的钩子
+        // UNSAFE_componentWillMount() { 
+        //     console.log('will mount')
+        // }
+        //组件挂载完毕的钩子
+        componentDidMount() {
+            console.log('did mount')
+        }
+        //组件将要卸载的钩子
+        componentWillUnmount(){
+            console.log('will unmount')
+        }
+        //组件是否需要被更新
+        shouldComponentUpdate(){
+            console.log('shouldComponentUpdate')
+            return true;//true,则调用render   false则不会调用render
+        }
+        // //组件是否将要更新
+        // UNSAFE_componentWillUpdate(){
+        //     console.log('will update')
+        // }
+        //组件更新完毕
+        componentDidUpdate(){
+            console.log('did update') 
+        }
+
+        render() {
+            console.log('render')
+            const {count} = this.state;
+            return (
+                <div>
+                    <h1>当前求和为{count}</h1>
+                    <button onClick={this.sum}>点我加一</button>
+                    <button onClick={this.death}>卸载组件</button>
+                    <button onClick={this.force}>不更改任何状态中的数据，强制进行更新</button>
+                </div>
+            )
+        }
+        }
+
+        class A extends React.Component {
+        //初始化状态
+        state = {carName:'奔驰'}
+        changeCar = ()=>{
+            this.setState({carName:'奥托'})
+        }
+        render() {
+            return (
+                <div>
+                    <div>我是A组件</div>
+                    <button onClick={this.changeCar}>换车</button>
+                    <B  carName={this.state.carName}/>
+                </div>
+            )
+        }
+        }
+        class B extends React.Component {
+        //组件将要接收props  第一次接收时不会调用！！！！
+        componentWillReceiveProps(){
+            console.log('will receive')
+        }
+        //组件是否需要被更新
+        shouldComponentUpdate(){
+            console.log('shouldComponentUpdate')
+            return true;//true,则调用render   false则不会调用render
+        }
+        //组件是否将要更新
+        componentWillUpdate(){
+            console.log('will update')
+        }
+        //组件更新完毕
+        componentDidUpdate(){
+            console.log('did update') 
+        }
+        render() {
+            return (
+                <div>我是B组件,接收到的是{this.props.carName}</div>
+            )
+        }
+        }
+        ReactDOM.render(<Addd/>, document.getElementById('test'))
     </script>
 </body>
 </html>

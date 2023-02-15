@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2023-02-07 16:02:30
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-07 16:02:37
+ * @LastEditTime: 2023-02-14 18:34:24
  * @FilePath: \Web-learning\React\code\02_study\非受控组件.html
  * @Description: 
  * 
@@ -25,7 +25,28 @@
     <script src="./js/babel.min.js"></script>
 
     <script type="text/babel">
-        
+        //非受控组件
+        //  页面中所有的输入类的dom，现用现取，则就是非受控组件
+        //创建组件
+        class Login extends React.Component {
+            handleSubmit = (event)=>{
+                //阻止表单提交
+                event.preventDefault()
+                const {username,password} = this
+                alert(username.value      +   password.value)
+            }
+            render() {
+                return (
+                    <form action="http://www.atgui.com" onSubmit={this.handleSubmit}>
+                        用户名：<input ref={c=>this.username=c} type="text" name='username'/>
+                        密码  ：<input  ref={c=>this.password=c}   type="password" name='password'/>
+                        <button>登录</button>
+                    </form>
+                )
+            }
+        }
+        //渲染组件
+        ReactDOM.render(<Login/>,document.getElementById('test'))
     </script>
 </body>
 </html>
