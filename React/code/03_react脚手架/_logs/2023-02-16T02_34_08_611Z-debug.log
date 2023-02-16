@@ -1,0 +1,21 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'G:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'G:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start'
+1 verbose cli ]
+2 info using npm@6.14.13
+3 info using node@v14.17.2
+4 verbose stack Error: ENOENT: no such file or directory, open 'E:\桌面\前端技术学习文档\Web-learning\React\code\03_react脚手架\package.json'
+5 verbose cwd E:\桌面\前端技术学习文档\Web-learning\React\code\03_react脚手架
+6 verbose Windows_NT 10.0.19044
+7 verbose argv "G:\\Program Files\\nodejs\\node.exe" "G:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+8 verbose node v14.17.2
+9 verbose npm  v6.14.13
+10 error code ENOENT
+11 error syscall open
+12 error path E:\桌面\前端技术学习文档\Web-learning\React\code\03_react脚手架\package.json
+13 error errno -4058
+14 error enoent ENOENT: no such file or directory, open 'E:\桌面\前端技术学习文档\Web-learning\React\code\03_react脚手架\package.json'
+15 error enoent This is related to npm not being able to find a file.
+16 verbose exit [ -4058, true ]
