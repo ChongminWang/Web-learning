@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2023-02-07 16:05:03
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-15 21:03:22
+ * @LastEditTime: 2023-02-15 21:10:24
  * @FilePath: \Web-learning\React\code\02_study\react生命周期_新.html
  * @Description: 
  * 
@@ -26,6 +26,24 @@
     <script src="./js17.0/babel.min.js"></script>
 
     <script type="text/babel">
+        /* 
+				1. 初始化阶段: 由ReactDOM.render()触发---初次渲染
+								1.	constructor()
+								2.	getDerivedStateFromProps 
+								3.	render()
+								4.	componentDidMount() =====> 常用
+											一般在这个钩子中做一些初始化的事，例如：开启定时器、发送网络请求、订阅消息
+				2. 更新阶段: 由组件内部this.setSate()或父组件重新render触发
+								1.	getDerivedStateFromProps
+								2.	shouldComponentUpdate()
+								3.	render()
+								4.	getSnapshotBeforeUpdate
+								5.	componentDidUpdate()
+				3. 卸载组件: 由ReactDOM.unmountComponentAtNode()触发
+								1.	componentWillUnmount()  =====> 常用
+											一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
+			*/
+
         //新的生命周期下  UNSAFE_componentWillMount UNSAFE_componentWillUpdate UNSAFE_componentWillReceiveProps 这三个需要加上新的UNSAFE_
 
         //react新的生命周期与旧的生命周期相比，它废弃了componentWillMount,componentWillUpdate,componentWillReceiveProps这三个钩子的同时，他又提出了两个新的钩子，分别为getDerivedStateFromProps和getSnapshotBeforeUpdate,这两种的用法及其少
@@ -49,10 +67,15 @@
             //强制更新，不需要在意阀门是否开启
             this.forceUpdate()
         }
-
+        //若state的值在任何时候都取决于props，那么可以使用getDerivedStateFromProps
         static getDerivedStateFromProps(){
             console.log('getDerivedStateFromProps');
             return null;//如果返回的是对象，则会导致状态不会在进行修改
+        }
+        //在更新之前获取快照,但此用法并不常见
+        getSnapshotBeforeUpdate(){
+            console.log('getSnapshotBeforeUpdate');
+            return 'sunwuk';
         }
 
         //组件将要挂载的钩子
@@ -77,8 +100,8 @@
         //     console.log('will update')
         // }
         //组件更新完毕
-        componentDidUpdate(){
-            console.log('did update') 
+        componentDidUpdate(prevProps,prevState,snapshotValue) {
+            console.log('did update',prevProps,prevState,snapshotValue) 
         }
 
         render() {
