@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./promise.js"></script>
+</head>
+<body>
+    <script>
+
+        const p = Promise.resolve('OK')
+        const p2 = Promise.reject('error')
+
+
+        console.log(p)
+        console.log(p2)
+
+        // let  p = new Promise((resolve, reject) => {
+            
+        //     setTimeout(() => {
+        //         // resolve('OK'); 
+        //         reject('err')
+        //         // throw 'errow'
+        //     }, 1000);
+        // })
+
+
+        // p.then(value=>{
+        //     console.log(11111)
+        //     // throw 'errow'
+        // }).then(value=>{
+        //     console.log(22222)
+        // }).then(value=>{
+        //     console.log(33333)
+        // }).catch(reason=>{
+        //     console.warn(reason)
+        // });
+
+
+        // console.log(p)
+        // p.then(value=>{
+        //     console.log(value);
+        // },reason=>{
+        //     console.log(reason);
+        // })
+
+        // p.then(value=>{
+        //     alert(value);
+        // },reason=>{
+        //     alert(reason);
+        // })
+
+        // const res = p.then(value=>{
+        //     console.log(value);
+        //     // return 'hello'
+        //     // return new Promise((resolve, reject) => {
+        //     //     // resolve('OKyyy');
+        //     //     reject('wewe')
+        //     // });
+        //     // throw "errrowwwww"
+        // },reason=>{
+        //     // return '错了'
+        //     console.log(reason);
+        //     // return new Promise((resolve, reject) => {
+        //     //     // resolve('OKyyy');
+        //     //     reject('wewe')
+        //     // });
+        //     // throw "errrowwwww"
+        // })
+        // console.log(res)
+
+        // p.catch(reason=>{
+        //     console.warn(reason);
+        // })
+
+    
+    </script>
+</body>
+</html>

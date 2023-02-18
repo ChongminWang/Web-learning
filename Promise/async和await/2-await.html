@@ -1,0 +1,44 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-02-18 16:41:49
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-02-18 20:50:20
+ * @FilePath: \Web-learning\Promise\async和await\2-await.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function main() {
+            let p = new Promise((resolve, reject) => {
+                // resolve('OK');
+                reject('Failed to resolve')
+            })
+            //1.右侧为promise的情况 则await会返回promise成功的那个值
+            // let res = await p
+            // console.log(res)
+
+            //2.右侧为其他类型的数据 则右侧是什么就返回什么
+            let res2= await 20;
+            console.log(res2)
+
+            //3.如果promise是一个失败的状态 则会需要通过try catch进行捕获
+            try{
+                let res3= await p;
+            }catch(e){
+                console.log(e)
+            }
+        }
+
+        main();
+    </script>
+</body>
+</html>

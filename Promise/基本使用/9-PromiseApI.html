@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p1 = Promise.reject(555555)
+        //如果传入的参数为 非Promise类型的对象 ，则返回的结果为成功的Promise对象
+        //如果传入的参数为 Promise对象，则参数的结果决定了 resolve的结果
+        // let p2 = Promise.reject(new Promise((resolve,reject)=>{
+        //     resolve('OK')
+        // }))
+
+        // console.log(p1)
+        // console.log(p2)
+
+        let p3 = new Promise((resolve,reject)=>{
+            resolve('OK')
+        })
+        let p4 = Promise.resolve('success')
+        let p5 = Promise.resolve('hhhhhh')
+
+
+        //Promise.all([]) 只要有失败的，则返回的是一个失败的Promise对象   全部成功，才返回一个成功的对象，返回值为成功的数组
+        const result =  Promise.all([p1,p3,p4,p5])
+
+        console.log(result)
+
+        //Promise.race([p1,p3,p4,p5),按顺序来，谁先成功，则返回的结果就是该成功的值
+        const result2 = Promise.race([p3,p4,p5])
+        console.log(result2)
+
+    </script>
+</body>
+</html>

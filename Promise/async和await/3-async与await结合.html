@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <script>
+        //https://api.vvhan.com/api/horoscope?type=scorpio&time=today
+        function sendAJAX(url){
+            return new Promise((resolve, reject) => {
+                //创建对象
+                const xhr = new XMLHttpRequest();
+                //初始化
+                xhr.open('GET',url);
+                //发送请求
+                xhr.send();
+                //处理响应结果
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState===4){
+                        if(xhr.status >=200 && xhr.status <=300){
+                            resolve(xhr.response)
+                        }
+                        else{
+                            reject(xhr.status)
+                        }
+                    }
+                }
+            })
+        }
+
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click',async function(){
+            let content = await sendAJAX('https://api.vvhan.com/api/horoscope?type=scorpio&time=today')
+
+            console.log(content)
+        })
+    </script>
+</body>
+</html>

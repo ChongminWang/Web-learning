@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p = new Promise((resolve,reject)=>{
+            //Promise(***)  *** 同步调用，不会进入队列中等待，先输出111，后输出222
+
+            //修改状态
+            reject('error');
+            console.log('1111')
+        })
+
+        console.log('22222')
+        //执行catch方法
+        p.catch((reason)=>{
+            console.log(reason)
+        })
+    </script>
+</body>
+</html>

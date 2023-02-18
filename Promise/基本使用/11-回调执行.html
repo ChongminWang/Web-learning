@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // promise 改变状与 then回调谁先执行
+        //都有可能
+        //当执行器中为同步任务，则先改变状态后执行回调 resolve('ok');
+        //当执行器中的函数为一个异步任务时，则先执行回调再改变状态
+        let p = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                resolve('ok');
+            },1000)
+
+        })
+
+
+        //p.then 返回结果与调用的方法返回的结果一样
+        p.then(value=>{
+        console.log(value)
+        },reason=>{
+
+        })
+
+        //promise通过调用then方法（返回的也是一个Promsie对象），形成链式调用，从而调用多个任务
+
+        //中断promise链条
+        //有且只有一种方式  调用pending 状态的回调函数
+        // return new Promise(()=>{})
+    </script>
+</body>
+</html>

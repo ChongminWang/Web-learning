@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //为一个promise对象指定多个回调时，当他的状态发生改变时，对应的多个回调都会执行
+        let p = new Promise((resolve, reject) => {
+            //1.resolve函数
+            resolve('ok');// pending => fulfilled
+            //2.reject()函数
+            // reject('error');// pending => rejected
+            //3.throw 抛出错误
+            // throw 'error44';
+        })
+
+        //指定回调 -1
+        p.then(value=>{
+            console.log(value);
+        })
+        //指定回调 -2
+        p.then(value=>{
+            alert(value);
+        })
+        console.log(p)
+    </script>
+</body>
+</html>
