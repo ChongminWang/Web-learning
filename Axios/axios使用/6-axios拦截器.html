@@ -1,0 +1,74 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-02-19 21:53:07
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-02-22 18:42:13
+ * @FilePath: \Web-learning\Axios\axios使用\6-axios拦截器.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link crossorigin="anonymous" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        // Promise
+        // 设置请求拦截器  config 配置对象
+        axios.interceptors.request.use(function (config) {
+            console.log('请求拦截器 成功 - 1号');
+            //修改 config 中的参数
+            config.params = {a:100};
+
+            return config;
+        }, function (error) {
+            console.log('请求拦截器 失败 - 1号');
+            return Promise.reject(error);
+        });
+
+        axios.interceptors.request.use(function (config) {
+            console.log('请求拦截器 成功 - 2号');
+            //修改 config 中的参数
+            config.timeout = 2000;
+            return config;
+        }, function (error) {
+            console.log('请求拦截器 失败 - 2号');
+            return Promise.reject(error);
+        });
+
+        // 设置响应拦截器
+        axios.interceptors.response.use(function (response) {
+            console.log('响应拦截器 成功 1号');
+            return response.data;
+            // return response;
+        }, function (error) {
+            console.log('响应拦截器 失败 1号')
+            return Promise.reject(error);
+        });
+
+        axios.interceptors.response.use(function (response) {
+            console.log('响应拦截器 成功 2号')
+            return response;
+        }, function (error) {
+            console.log('响应拦截器 失败 2号')
+            return Promise.reject(error);
+        });
+
+        //发送请求
+        axios({
+            method: 'GET',
+            url: 'http://localhost:3000/posts'
+        }).then(response => {
+            console.log('自定义回调处理成功的结果');
+            console.log(response);
+        });
+    </script>
+</body>
+</html>
