@@ -2,7 +2,7 @@
  * @Author: 2577624123 2577624123@qq.com
  * @Date: 2023-02-22 19:07:42
  * @LastEditors: 2577624123 2577624123@qq.com
- * @LastEditTime: 2023-02-22 19:08:51
+ * @LastEditTime: 2023-02-23 11:19:41
  * @FilePath: \Web-learning\Axios\axios源码分析\4-axios拦截器模拟实现.html
  * @Description: 
  * 
@@ -17,7 +17,100 @@
 </head>
 <body>
     <script>
+        //构造函数
+        function Axios(config) {
+            this.config = config,
+            this.interceptors = {
+                request:new InterceptorManager(),
+                response:new InterceptorManager()
+            }
+        }
+        Axios.prototype.request = function(config){
+            let promise = Promise.resolve(config)
+
+            let chains = [dispatchRequest,undefined]
+
+            this.interceptors.request.handle.forEach(item=>{
+                chains.unshift(item.fulfilled,item.rejected)
+            })
+
+            this.interceptors.response.handle.forEach(item=>{
+                chains.push(item.fulfilled,item.rejected)
+            })
+
+            //遍历
+            while(chains.length > 0){
+                promise =  promise.then(chains.shift(),chains.shift())
+            }
+            return promise;
+        }
+        function dispatchRequest(config){
+            return new Promise((resolve, reject) =>{
+                resolve({
+                    status:200,
+                    statusText:'OK'
+                })
+            })
+        }
         
+        //创建实例
+        let context = new Axios({})
+        //创建axios函数
+        let axios = Axios.prototype.request.bind(context)
+        Object.keys(context).forEach(key=>{
+            axios[key] = context[key]
+        })
+        //拦截器管理器构造函数
+        function InterceptorManager(){
+            this.handle= []
+        }
+        InterceptorManager.prototype.use = function(fulfilled,rejected){
+            this.handle.push({
+                fulfilled,
+                rejected
+            })
+        }
+
+        axios.interceptors.request.use(function one(config) {
+            console.log('请求拦截器 成功 - 1号');
+            return config;
+        }, function one(error) {
+            console.log('请求拦截器 失败 - 1号');
+            return Promise.reject(error);
+        });
+
+        axios.interceptors.request.use(function two(config) {
+            console.log('请求拦截器 成功 - 2号');
+            return config;
+        }, function two(error) {
+            console.log('请求拦截器 失败 - 2号');
+            return Promise.reject(error);
+        });
+
+        // 设置响应拦截器
+        axios.interceptors.response.use(function (response) {
+            console.log('响应拦截器 成功 1号');
+            return response;
+        }, function (error) {
+            console.log('响应拦截器 失败 1号')
+            return Promise.reject(error);
+        });
+
+        axios.interceptors.response.use(function (response) {
+            console.log('响应拦截器 成功 2号')
+            return response;
+        }, function (error) {
+            console.log('响应拦截器 失败 2号')
+            return Promise.reject(error);
+        });
+
+        //发送请求
+        axios({
+            method: 'GET',
+            url: 'http://localhost:3000/posts'
+        }).then(response => {
+            console.log(response);
+        });
     </script>
 </body>
 </html>
