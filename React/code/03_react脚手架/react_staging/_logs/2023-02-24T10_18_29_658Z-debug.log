@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'G:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'G:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'reat-router-dom@5'
+1 verbose cli ]
+2 info using npm@6.14.13
+3 info using node@v14.17.2
+4 verbose npm-session ec583ed221644775
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 404 https://registry.npmjs.org/reat-router-dom 1179ms
+8 http fetch GET 404 https://registry.npmjs.org/reat-router-dom 361ms
+9 silly fetchPackageMetaData error for reat-router-dom@5 404 Not Found - GET https://registry.npmjs.org/reat-router-dom - Not found
+10 timing stage:rollbackFailedOptional Completed in 1ms
+11 timing stage:runTopLevelLifecycles Completed in 2729ms
+12 verbose stack Error: 404 Not Found - GET https://registry.npmjs.org/reat-router-dom - Not found
+12 verbose stack     at G:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-fetch\check-response.js:117:15
+12 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:95:5)
+13 verbose statusCode 404
+14 verbose pkgid reat-router-dom@5
+15 verbose cwd E:\桌面\前端技术学习文档\Web-learning\React\code\03_react脚手架\react_staging
+16 verbose Windows_NT 10.0.19044
+17 verbose argv "G:\\Program Files\\nodejs\\node.exe" "G:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "reat-router-dom@5"
+18 verbose node v14.17.2
+19 verbose npm  v6.14.13
+20 error code E404
+21 error 404 Not Found - GET https://registry.npmjs.org/reat-router-dom - Not found
+22 error 404
+23 error 404 'reat-router-dom@5' is not in the npm registry.
+24 error 404 You should bug the author to publish it (or use the name yourself!)
+25 error 404 Note that you can also install from a
+26 error 404 tarball, folder, http url, or git url.
+27 verbose exit [ 1, true ]
