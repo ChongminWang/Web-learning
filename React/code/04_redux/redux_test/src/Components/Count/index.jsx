@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import store from '../../redux/store'
 //引入actionCraeter
-import {createIncrementAction,createDecrementAction} from '../../redux/count_action'
+import {createIncrementAction,createDecrementAction,createIncrementAsyncAction} from '../../redux/count_action'
 
 export default class Count extends Component {
     state = { }
@@ -27,7 +27,7 @@ export default class Count extends Component {
         const {value} = this.selectNumber
         console.log('开始前')
         setTimeout = (() => {
-            store.dispatch(createIncrementAction(value))
+            store.dispatch(createIncrementAsyncAction(value,500))
             console.log('开始后')
         }, 500)
 

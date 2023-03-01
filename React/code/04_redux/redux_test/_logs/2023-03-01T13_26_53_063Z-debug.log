@@ -1,0 +1,49 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'G:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'G:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'redux-thunk'
+1 verbose cli ]
+2 info using npm@6.14.13
+3 info using node@v14.17.2
+4 verbose npm-session 48dc81a801ed7cc8
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 http fetch GET 200 https://registry.npmjs.org/redux-thunk 1064ms
+8 http fetch GET 200 https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.4.2.tgz 285ms
+9 silly pacote tag manifest for redux-thunk@latest fetched in 1380ms
+10 timing stage:loadCurrentTree Completed in 19974ms
+11 silly install loadIdealTree
+12 silly install cloneCurrentTreeToIdealTree
+13 timing stage:loadIdealTree:cloneCurrentTree Completed in 22ms
+14 silly install loadShrinkwrap
+15 timing stage:rollbackFailedOptional Completed in 1ms
+16 timing stage:runTopLevelLifecycles Completed in 20115ms
+17 silly saveTree redux_test@0.1.0
+18 verbose stack Error: Object for dependency "yallist" is empty.
+18 verbose stack Something went wrong. Regenerate the package-lock.json with "npm install".
+18 verbose stack If using a shrinkwrap, regenerate with "npm shrinkwrap".
+18 verbose stack     at G:\Program Files\nodejs\node_modules\npm\lib\install\inflate-shrinkwrap.js:60:29
+18 verbose stack     at tryCatcher (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\util.js:16:23)
+18 verbose stack     at Object.gotValue (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\reduce.js:155:18)
+18 verbose stack     at Object.gotAccum (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\reduce.js:144:25)
+18 verbose stack     at Object.tryCatcher (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\util.js:16:23)
+18 verbose stack     at Promise._settlePromiseFromHandler (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\promise.js:517:31)
+18 verbose stack     at Promise._settlePromise (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\promise.js:574:18)
+18 verbose stack     at Promise._settlePromise0 (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\promise.js:619:10)
+18 verbose stack     at Promise._settlePromises (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\promise.js:699:18)
+18 verbose stack     at _drainQueueStep (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\async.js:138:12)
+18 verbose stack     at _drainQueue (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\async.js:131:9)
+18 verbose stack     at Async._drainQueues (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\async.js:147:5)
+18 verbose stack     at Immediate.Async.drainQueues (G:\Program Files\nodejs\node_modules\npm\node_modules\bluebird\js\release\async.js:17:14)
+18 verbose stack     at processImmediate (internal/timers.js:464:21)
+19 verbose cwd E:\桌面\前端技术学习文档\Web-learning\React\code\04_redux\redux_test
+20 verbose Windows_NT 10.0.19044
+21 verbose argv "G:\\Program Files\\nodejs\\node.exe" "G:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "redux-thunk"
+22 verbose node v14.17.2
+23 verbose npm  v6.14.13
+24 error Object for dependency "yallist" is empty.
+24 error Something went wrong. Regenerate the package-lock.json with "npm install".
+24 error If using a shrinkwrap, regenerate with "npm shrinkwrap".
+25 verbose exit [ 1, true ]
