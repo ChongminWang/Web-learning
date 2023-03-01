@@ -1,23 +1,25 @@
 import React, { Component } from 'react'
 import store from '../../redux/store'
+//引入actionCraeter
+import {createIncrementAction,createDecrementAction} from '../../redux/count_action'
 
 export default class Count extends Component {
     state = { }
 
     increment = () => {
         const {value} = this.selectNumber
-        store.dispatch({type:'increment',data:value})
+        store.dispatch(createIncrementAction(value))
 
     }
     decrement = () => {
         const {value} = this.selectNumber
-        store.dispatch({type:'decrement',data:value})
+        store.dispatch(createDecrementAction(value))
     }
     incrementIFOdd = () => {
         const {value} = this.selectNumber
         const count = store.getState()
         if (count % 2 !== 0) {
-            store.dispatch({type:'increment',data:value})
+            store.dispatch(createIncrementAction(value))
         }
 
     }
@@ -25,7 +27,7 @@ export default class Count extends Component {
         const {value} = this.selectNumber
         console.log('开始前')
         setTimeout = (() => {
-            store.dispatch({type:'increment',data:value})
+            store.dispatch(createIncrementAction(value))
             console.log('开始后')
         }, 500)
 
