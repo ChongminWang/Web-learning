@@ -15,12 +15,13 @@ export default class Parent extends PureComponent {
 	}
 
 	changeCar = ()=>{
-		//this.setState({carName:'迈巴赫'})
+		this.setState({carName:'迈巴赫'})  
 
-		const obj = this.state
-		obj.carName = '迈巴赫'
-		console.log(obj === this.state);
-		this.setState(obj)
+		//浅比较，引用的地址，还是同一个对象
+		// const obj = this.state
+		// obj.carName = '迈巴赫'
+		// console.log(obj === this.state);
+		// this.setState(obj)
 	}
 
 	/* shouldComponentUpdate(nextProps,nextState){
