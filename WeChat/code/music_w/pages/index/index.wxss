@@ -1,0 +1,118 @@
+/* pages/index/index.wxss */
+.swper-content{
+  width: 100%;
+  height: 300rpx;
+
+}
+
+.swper-content image{
+  width: 100%;
+  height: 100%;
+}
+
+/* 五个图标区域样式 */
+.icon-content{
+  display: flex;
+}
+
+.icon-item{
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-item .iconfont{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  background-color: rgb(240, 19, 19);
+  font-size: 50rpx;
+  color: #fff;
+  margin: 20rpx 0;
+}
+.icon-item text{
+  font-size: 30rpx;
+}
+
+/* 推荐区域 */
+.tuijian-content{
+  padding: 20rpx;
+}
+
+/* 推荐内容区 */
+.image-scroll{
+  display: flex;
+  height: 300rpx;
+  margin-top: 30rpx;
+}
+.image-content{
+  width: 200rpx;
+
+}
+.image-content  image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+.image-content text{
+  font-size: 26rpx;
+  /* 单行文本溢出 */
+  /* white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  /* 多行文本溢出 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* 排行榜 */
+.topList{
+  padding: 20rpx;
+}
+.toplist-swiper{
+  height: 400rpx;
+}
+/* 排行榜内容区 */
+.swiperItem{
+  width: 96%;
+  background-color: #fcfcfc;
+}
+.swiperItem .title{
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+.musicItem{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+/* .musicItem image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+
+} */
+
+.musicItem .count{
+  font-size: 30rpx;
+  line-height: 80rpx;
+  margin-left: 40rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.musicItem .musicName{
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-left: 40rpx;
+  max-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,53 @@
+<view class="videoContainer">
+  <!-- 头部区域 -->
+  <view class="header">
+    <image src="/static/images/video/video.jpg"></image>
+    <view class="search" bindtap="toSearch">
+      搜索歌曲
+    </view>
+    <image src="/static/images/logo.png"></image>
+  </view>
+
+  <!-- 导航区域 -->
+  <scroll-view scroll-x scroll-into-view="{{'a' + navId}}" scroll-with-animation class="navScroll" enable-flex>
+    <view id="{{'a' + item.id}}" class="navItem" wx:for="{{videoGroupList}}" wx:key="id">
+      <view class="navContent {{navId === item.id? 'active': ''}}" bindtap="changeNav" id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 视频列表区域 -->
+  <scroll-view class="videoScroll" scroll-y refresher-enabled bindrefresherrefresh="handleRefresher" refresher-triggered="{{ isTriggered }}" bindscrolltolower="handleToLower">
+    <view class="videoItem" wx:for="{{ videoList }}" wx:key="id">
+      <!-- <video src="{{ item.data.urlInf.url }}"></video> -->
+      <video id="{{ item.data.vid }}" class="{{ videoContext.vid === item.data.vid ? 'play':'stop' }}" src="{{ item.urls[0].url }}" poster="{{ item.data.coverUrl }}" object-fit="cover" bindplay="bindlePlay" data-id="{{ item.data.vid }}"></video>
+
+      <!-- 性能优化：使用image代替未播放的video -->
+      <image class="{{ videoContext.vid === item.data.vid ? 'stop':'play' }}" src="{{ item.data.coverUrl }}" bindtap="bindlePlay" data-id="{{ item.data.vid }}" />
+
+      <!-- 视频标题 -->
+      <view class="content">{{item.data.title}}</view>
+
+      <!-- 用户信息 -->
+      <view class="footer">
+        <image class="avatar" src="{{item.data.creator.avatarUrl}}"></image>
+        <text class="nickName">{{item.data.creator.nickname}}</text>
+        <view class="comments_praised">
+          <text class="item">
+            <text class="iconfont icon-buoumaotubiao15"></text>
+            <text class="count">{{item.data.praisedCount}}</text>
+          </text>
+          <text class="item">
+            <text class="iconfont icon-pinglun1"></text>
+            <text class="count">{{item.data.commentCount}}</text>
+          </text>
+          <!-- open-type="share" 实现转发 -->
+          <button open-type="share" class="item btn">
+            <text class="iconfont icon-gengduo"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

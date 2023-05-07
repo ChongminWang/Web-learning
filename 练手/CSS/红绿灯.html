@@ -1,0 +1,46 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-03-11 18:45:46
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-03-11 18:45:54
+ * @FilePath: \Web-learning\练手\CSS\红绿灯.html
+ * @Description: 
+ * 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .light {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            animation: change 6s infinite;
+        }
+
+        @keyframes change {
+            0% {
+                background-color: green;
+            }
+
+            50% {
+                background-color: yellow;
+            }
+
+            83% {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class='light'></div>
+</body>
+
+</html>
