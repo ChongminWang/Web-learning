@@ -1,0 +1,43 @@
+<!--
+ * @Author: 2577624123 2577624123@qq.com
+ * @Date: 2023-05-12 15:09:16
+ * @LastEditors: 2577624123 2577624123@qq.com
+ * @LastEditTime: 2023-05-12 15:13:38
+ * @FilePath: \vue_basic\03_数据绑定\03_数据绑定.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 
+		Vue中有2种数据绑定的方式：
+			1.单向绑定(v-bind)：数据只能从data流向页面。
+			2.双向绑定(v-model)：数据不仅能从data流向页面，还可以从页面流向data。
+				备注：
+				1.双向绑定一般都应用在表单类元素上（如：input、select等）
+				2.v-model:value 可以简写为 v-model，因为v-model默认收集的就是value值。
+	-->
+    <div id="root">
+        单向数据绑定：<input type="text" v-bind:value="name">
+        双向数据绑定：<input type="text" v-model:value="name">
+        <!-- v-model只能应用在表单类输入类元素 -->
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:'#root',
+            data:{
+                name:'孙悟空'
+            }
+        })
+        
+    </script>
+</body>
+</html>
